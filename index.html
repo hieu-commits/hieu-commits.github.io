@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#060914">
+  <meta name="description" content="Hieu's software engineering portfolio — C/C++, Python, AI, and practical engineering experiments.">
+  <meta property="og:title" content="Hieu — Software Engineering Portfolio">
+  <meta property="og:description" content="Code with intent. Build with curiosity. Improve through iteration.">
+  <meta property="og:type" content="website">
+  <title>Hieu — Software Engineering Portfolio</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <div class="ambient ambient-one" aria-hidden="true"></div>
+  <div class="ambient ambient-two" aria-hidden="true"></div>
+  <div class="page-grid" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="Hieu portfolio home">
+      <span class="brand-mark">HC<span>.</span></span>
+      <span class="brand-label">hieu-commits<span>/portfolio</span></span>
+    </a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="siteNav">
+      <span></span><span></span>
+    </button>
+    <nav class="nav" id="siteNav" aria-label="Main navigation">
+      <a href="#about">About</a>
+      <a href="#stack">Expertise</a>
+      <a href="#projects">Projects</a>
+      <a href="#roadmap">Roadmap</a>
+      <a class="nav-cta" href="#contact">Let's connect <span aria-hidden="true">↗</span></a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero section-wrap" aria-labelledby="heroTitle">
+      <div class="hero-copy reveal">
+        <div class="eyebrow"><span class="pulse-dot"></span> SOFTWARE ENGINEERING · CONTINUOUS LEARNING</div>
+        <h1 id="heroTitle">Build things<br>that <span class="gradient-text">make sense.</span></h1>
+        <p class="hero-lead">Hi, I'm <strong>Hieu</strong> — an aspiring software engineer exploring how clean code, systems thinking, Python, and AI come together to solve real problems.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#projects">Explore the work <span aria-hidden="true">↘</span></a>
+          <a class="button button-ghost" href="https://github.com/hieu-commits" target="_blank" rel="noopener noreferrer">GitHub profile <span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="hero-footnote"><span class="mini-bars"><i></i><i></i><i></i><i></i></span><span>Curious by default. Intentional by design.</span></div>
+      </div>
+
+      <div class="hero-visual reveal" aria-label="Abstract illustration of code, systems, and artificial intelligence" role="img">
+        <div class="visual-topline"><span>THINK / BUILD / ITERATE</span><span class="visual-live"><i></i> PORTFOLIO CONCEPT</span></div>
+        <img class="hero-art" src="assets/hero-visual.svg" alt="Abstract glowing AI core connected to software nodes">
+        <div class="float-chip chip-code"><span class="chip-glyph">{ }</span><span><b>C / C++</b><small>Systems & logic</small></span></div>
+        <div class="float-chip chip-python"><span class="python-glyph">Py</span><span><b>Python</b><small>Automation & data</small></span></div>
+        <div class="float-chip chip-ai"><span class="ai-glyph">✳</span><span><b>AI / ML</b><small>Explore & evaluate</small></span></div>
+        <div class="visual-corner corner-a"></div><div class="visual-corner corner-b"></div>
+      </div>
+      <div class="hero-bottom-line"><span>01 / ENGINEERING MINDSET</span><span>LESS NOISE. MORE SIGNAL.</span></div>
+    </section>
+
+    <section class="ticker" aria-label="Areas of interest">
+      <div class="ticker-track">
+        <span>SOFTWARE ENGINEERING</span><b>✳</b><span>C / C++</span><b>✳</b><span>PYTHON</span><b>✳</b><span>ARTIFICIAL INTELLIGENCE</span><b>✳</b><span>ALGORITHMS</span><b>✳</b><span>DEVELOPER TOOLS</span><b>✳</b>
+        <span aria-hidden="true">SOFTWARE ENGINEERING</span><b aria-hidden="true">✳</b><span aria-hidden="true">C / C++</span><b aria-hidden="true">✳</b><span aria-hidden="true">PYTHON</span><b aria-hidden="true">✳</b><span aria-hidden="true">ARTIFICIAL INTELLIGENCE</span><b aria-hidden="true">✳</b><span aria-hidden="true">ALGORITHMS</span><b aria-hidden="true">✳</b><span aria-hidden="true">DEVELOPER TOOLS</span><b aria-hidden="true">✳</b>
+      </div>
+    </section>
+
+    <section class="section-wrap section-block" id="about">
+      <div class="section-heading reveal">
+        <div><span class="section-index">01 — THE PERSON</span><h2>Curiosity is the <span class="gradient-text">starting point.</span></h2></div>
+        <p>I care about understanding the why behind the code — not just making it run.</p>
+      </div>
+      <div class="about-grid">
+        <article class="panel about-panel reveal">
+          <div class="panel-label"><span class="panel-icon icon-cyan">⌘</span><span>ENGINEERING PHILOSOPHY</span></div>
+          <h3>Learn deeply.<br><span class="muted-heading">Build deliberately.</span></h3>
+          <p>My focus is growing a strong foundation in programming, problem-solving, and software design. I use small experiments to turn abstract concepts into things I can test, explain, and improve.</p>
+          <div class="principle-list">
+            <div><span class="principle-number">A</span><span><b>Understand the problem</b><small>Clarify constraints before choosing tools.</small></span></div>
+            <div><span class="principle-number">B</span><span><b>Make it work, then make it clear</b><small>Readable code is a feature, not decoration.</small></span></div>
+            <div><span class="principle-number">C</span><span><b>Measure and iterate</b><small>Test assumptions. Document what changes.</small></span></div>
+          </div>
+        </article>
+        <article class="panel currently-panel reveal">
+          <div class="panel-label"><span class="panel-icon icon-violet">◈</span><span>CURRENTLY EXPLORING</span></div>
+          <div class="current-item"><div class="current-icon blue">C++</div><div><b>Core programming & algorithms</b><p>Pointers, memory, data structures, complexity, and debugging.</p></div><span class="current-arrow">↗</span></div>
+          <div class="current-item"><div class="current-icon yellow">Py</div><div><b>Python engineering</b><p>Reusable scripts, clean modules, automation, and data workflows.</p></div><span class="current-arrow">↗</span></div>
+          <div class="current-item"><div class="current-icon violet">AI</div><div><b>Artificial intelligence</b><p>Machine-learning foundations, experiments, and evaluation.</p></div><span class="current-arrow">↗</span></div>
+          <div class="panel-foot"><span class="pulse-dot"></span> Learning in public, one useful commit at a time.</div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section-wrap section-block" id="stack">
+      <div class="section-heading reveal">
+        <div><span class="section-index">02 — THE TOOLBOX</span><h2>Technical <span class="gradient-text">interests.</span></h2></div>
+        <p>A focused learning map — not a claim to mastery.</p>
+      </div>
+      <div class="stack-grid">
+        <article class="stack-card stack-blue reveal"><div class="stack-card-top"><span class="stack-icon">{ }</span><span class="stack-number">01</span></div><h3>Software Engineering</h3><p>Design, readable code, debugging, testing, and version control.</p><div class="tags"><span>OOP</span><span>Algorithms</span><span>Git</span><span>Testing</span></div><div class="stack-line"></div></article>
+        <article class="stack-card stack-cyan reveal"><div class="stack-card-top"><span class="stack-icon">C⁺</span><span class="stack-number">02</span></div><h3>C / C++</h3><p>Programming fundamentals, memory, pointers, and data structures.</p><div class="tags"><span>C</span><span>C++</span><span>STL</span><span>DSA</span></div><div class="stack-line"></div></article>
+        <article class="stack-card stack-gold reveal"><div class="stack-card-top"><span class="stack-icon">Py</span><span class="stack-number">03</span></div><h3>Python</h3><p>Automation, scripting, data processing, and practical tooling.</p><div class="tags"><span>Python 3</span><span>CLI tools</span><span>Data</span></div><div class="stack-line"></div></article>
+        <article class="stack-card stack-violet reveal"><div class="stack-card-top"><span class="stack-icon">✳</span><span class="stack-number">04</span></div><h3>Artificial Intelligence</h3><p>ML foundations, model experiments, evaluation, and responsible use.</p><div class="tags"><span>ML basics</span><span>Data prep</span><span>Evaluation</span></div><div class="stack-line"></div></article>
+      </div>
+      <div class="stack-note reveal"><span class="note-mark">i</span><p><strong>Portfolio principle:</strong> I will link only to work that exists and can be reviewed. Topics here represent my learning focus; they are not certifications or claims of professional mastery.</p></div>
+    </section>
+
+    <section class="section-wrap section-block" id="projects">
+      <div class="section-heading reveal">
+        <div><span class="section-index">03 — SELECTED WORK</span><h2>Ideas become <span class="gradient-text">artifacts.</span></h2></div>
+        <a class="text-link" href="https://github.com/hieu-commits?tab=repositories" target="_blank" rel="noopener noreferrer">Browse GitHub repositories <span>↗</span></a>
+      </div>
+      <div class="project-grid">
+        <article class="project-card project-cpp reveal">
+          <div class="project-art art-cpp"><div class="art-top"><span>CONCEPT / 001</span><span class="art-dot"></span></div><div class="code-window"><div class="window-controls"><i></i><i></i><i></i><span>main.cpp</span></div><div class="code-lines"><span><i>01</i><b class="code-purple">#include</b> <em>&lt;iostream&gt;</em></span><span><i>02</i><b class="code-cyan">int</b> main() {</span><span><i>03</i>&nbsp;&nbsp;std::cout &lt;&lt; <em>"Hello, world"</em>;</span><span><i>04</i>&nbsp;&nbsp;<b class="code-purple">return</b> 0;</span><span><i>05</i>}</span></div></div></div>
+          <div class="project-content"><div class="project-meta"><span class="project-type">PROJECT BLUEPRINT</span><span class="project-lang">C / C++</span></div><h3>C++ Systems Playground</h3><p>A home for compact experiments in algorithms, pointers, memory layout, and core computer-science concepts.</p><div class="project-bottom"><span class="project-state"><i></i> Ready to build</span><a href="https://github.com/hieu-commits?tab=repositories" target="_blank" rel="noopener noreferrer" aria-label="Open GitHub repositories">↗</a></div></div>
+        </article>
+        <article class="project-card project-python reveal">
+          <div class="project-art art-python"><div class="art-top"><span>CONCEPT / 002</span><span class="art-dot"></span></div><div class="python-orbit"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="orbit-core">Py</div><span class="orbit-node node-one">ƒ</span><span class="orbit-node node-two">↗</span><span class="orbit-node node-three">⌘</span></div><div class="orbit-caption">AUTOMATE THE REPEATABLE</div></div>
+          <div class="project-content"><div class="project-meta"><span class="project-type">PROJECT BLUEPRINT</span><span class="project-lang">PYTHON</span></div><h3>Python Utility Lab</h3><p>A collection of small command-line tools for file workflows, data transformation, and repetitive developer tasks.</p><div class="project-bottom"><span class="project-state"><i></i> Ready to build</span><a href="https://github.com/hieu-commits?tab=repositories" target="_blank" rel="noopener noreferrer" aria-label="Open GitHub repositories">↗</a></div></div>
+        </article>
+        <article class="project-card project-ai reveal">
+          <div class="project-art art-ai"><div class="art-top"><span>CONCEPT / 003</span><span class="art-dot"></span></div><div class="ai-network"><svg viewBox="0 0 300 150" role="img" aria-label="Abstract connected nodes"><g stroke="currentColor" stroke-opacity=".34" stroke-width="1.5"><path d="M30 80 L82 36 L128 65 L174 25 L220 65 L270 34 M30 80 L76 122 L128 65 L175 116 L220 65 L268 112 M82 36 L76 122 M174 25 L175 116 M128 65 L220 65"/></g><g fill="#0b142d" stroke="currentColor" stroke-width="2"><circle cx="30" cy="80" r="7"/><circle cx="82" cy="36" r="7"/><circle cx="76" cy="122" r="7"/><circle cx="128" cy="65" r="12"/><circle cx="174" cy="25" r="7"/><circle cx="175" cy="116" r="7"/><circle cx="220" cy="65" r="10"/><circle cx="270" cy="34" r="7"/><circle cx="268" cy="112" r="7"/></g><circle cx="128" cy="65" r="4" fill="#fff"/><circle cx="220" cy="65" r="3" fill="#fff"/></svg><span class="ai-core-label">MODEL / DATA / EVALUATION</span></div></div>
+          <div class="project-content"><div class="project-meta"><span class="project-type">PROJECT BLUEPRINT</span><span class="project-lang">AI / DATA</span></div><h3>AI Experiment Notebook</h3><p>A documented learning space for data preparation, baseline models, evaluation, and reproducible experiments.</p><div class="project-bottom"><span class="project-state"><i></i> Ready to build</span><a href="https://github.com/hieu-commits?tab=repositories" target="_blank" rel="noopener noreferrer" aria-label="Open GitHub repositories">↗</a></div></div>
+        </article>
+      </div>
+      <p class="projects-disclaimer reveal">These are starter blueprints, not completed projects. Replace each card with a real repository, screenshots, setup steps, and technical decisions as you build them.</p>
+    </section>
+
+    <section class="section-wrap section-block roadmap-section" id="roadmap">
+      <div class="section-heading reveal">
+        <div><span class="section-index">04 — THE NEXT ITERATION</span><h2>Keep the <span class="gradient-text">momentum.</span></h2></div>
+        <p>A practical path from fundamentals to demonstrable projects.</p>
+      </div>
+      <div class="roadmap panel reveal">
+        <div class="roadmap-line" aria-hidden="true"></div>
+        <article class="roadmap-item"><div class="roadmap-node node-done">01</div><div><span class="roadmap-status">FOUNDATION</span><h3>Strengthen programming fundamentals</h3><p>C/C++, data structures, algorithms, memory, and debugging habits.</p></div><span class="roadmap-symbol">⌘</span></article>
+        <article class="roadmap-item"><div class="roadmap-node node-active">02</div><div><span class="roadmap-status">IN PRACTICE</span><h3>Ship useful Python tools</h3><p>Build small utilities with clear interfaces, tests, and documentation.</p></div><span class="roadmap-symbol">⌁</span></article>
+        <article class="roadmap-item"><div class="roadmap-node">03</div><div><span class="roadmap-status">NEXT FRONTIER</span><h3>Run measurable AI experiments</h3><p>Start with a baseline, define evaluation criteria, and record results.</p></div><span class="roadmap-symbol">✳</span></article>
+        <article class="roadmap-item"><div class="roadmap-node">04</div><div><span class="roadmap-status">SHIP IT</span><h3>Turn learning into portfolio-quality work</h3><p>Publish repositories with setup instructions, trade-offs, tests, and a demo.</p></div><span class="roadmap-symbol">↗</span></article>
+      </div>
+    </section>
+
+    <section class="section-wrap contact-section" id="contact">
+      <div class="contact-card reveal">
+        <div class="contact-orb orb-left" aria-hidden="true"></div><div class="contact-orb orb-right" aria-hidden="true"></div>
+        <span class="section-index">05 — OPEN CHANNEL</span>
+        <h2>Have a good problem?<br><span class="gradient-text">Let's think it through.</span></h2>
+        <p>I'm interested in thoughtful engineering, useful tools, and learning from people who build with care.</p>
+        <div class="hero-actions contact-actions"><a class="button button-primary" href="https://github.com/hieu-commits" target="_blank" rel="noopener noreferrer">Connect on GitHub <span>↗</span></a><button class="button button-ghost" id="copyProfile" type="button">Copy profile link <span>⧉</span></button></div>
+        <p class="copy-feedback" id="copyFeedback" aria-live="polite"></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer section-wrap">
+    <a class="brand footer-brand" href="#top"><span class="brand-mark">HC<span>.</span></span><span class="brand-label">hieu-commits<span>/portfolio</span></span></a>
+    <p>Designed to learn. Built to improve.</p>
+    <div class="footer-right"><span>© <span id="year"></span> Hieu</span><a href="#top">Back to top ↑</a></div>
+  </footer>
+</body>
+</html>
