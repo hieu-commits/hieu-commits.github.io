@@ -1,50 +1,30 @@
-# Hieu Portfolio — hướng dẫn cập nhật (tiếng Việt)
+# Cập nhật Portfolio — Engineering Profile & Hover Cards
 
-Website tĩnh dùng HTML, CSS và JavaScript thuần. Bộ cập nhật này đồng bộ nhận diện với GitHub Profile `hieu-commits`: nền navy, cyan–blue–violet, card bo góc, ticker chạy ngang ngay dưới Hero, nội dung theo 6 nhóm chuyên môn và nhấn mạnh bằng chứng thực tế thay vì tuyên bố quá mức.
+## Những thay đổi trong bản này
 
-## Cấu trúc
+- Đổi mục `01 — THE PERSON` thành `01 / ENGINEERING PROFILE`.
+- Đổi mục `02 — THE TOOLBOX` thành `02 / TECHNICAL CAPABILITIES`.
+- Bỏ số `01 /` khỏi câu định vị trong Hero để tránh đánh số mục bị lặp.
+- Giữ thanh ticker ngay dưới Hero và trên mục `01 / ENGINEERING PROFILE`.
+- Viết lại nội dung theo hướng tự tin, tập trung vào tư duy hệ thống, cách tiếp cận vấn đề và kết quả có thể kiểm chứng.
+- Bổ sung hiệu ứng viền điện chạy quanh card Technical Capabilities và Project khi rê chuột trên thiết bị có chuột. Hiệu ứng dừng khi rời card; bàn phím nhận viền tĩnh; chế độ giảm chuyển động không bị ép chạy animation.
+- Giữ tên trường HCMUS đầy đủ và giữ nguyên cấu trúc trang chi tiết dự án.
 
-```text
-hieu-commits.github.io/
-├── index.html                 # Trang portfolio
-├── styles.css                 # Design system, responsive, hover
-├── script.js                  # Menu mobile, reveal, copy link
-├── docs/
-│   └── project-detail-template.html.template # Mẫu trang chi tiết cho dự án thật
-├── README_VI.md               # Hướng dẫn
-├── .nojekyll
-└── assets/
-    ├── favicon.svg
-    └── hero-systems.svg
-```
+## Cập nhật bằng GitHub Desktop
 
-## Chạy thử local
+1. Giải nén ZIP này.
+2. Mở GitHub Desktop và chọn repository `hieu-commits.github.io`.
+3. Chọn **Repository → Show in Explorer**.
+4. Sao lưu các file bạn đã tự chỉnh sửa, rồi chép `index.html`, `styles.css`, `script.js`, `.nojekyll` và các thư mục `assets/`, `docs/` từ gói này vào thư mục repository. Giữ đúng cấu trúc thư mục; không tạo `assets/assets/`.
+5. Quay lại GitHub Desktop, kiểm tra **Changes**.
+6. Commit với Summary `Refine engineering profile and card hover effects`, sau đó nhấn **Push origin**.
+7. Chờ GitHub Pages triển khai xong, mở website và nhấn `Ctrl + F5`.
 
-Mở thư mục bằng VS Code; nên dùng Live Server để xem hành vi điều hướng và responsive. Có thể mở trực tiếp `index.html` trong trình duyệt cho lần xem nhanh.
+## Kiểm tra hiệu ứng
 
-## Cập nhật GitHub Pages
+- Trên desktop: rê chuột vào từng card trong Technical Capabilities hoặc Projects. Card hơi nâng lên và một vệt sáng chạy quanh viền.
+- Khi rời chuột: hiệu ứng ngừng và card trở về trạng thái ban đầu.
+- Trên điện thoại/màn hình cảm ứng: không chạy animation hover liên tục.
+- Nếu hệ điều hành bật `Reduce motion`: viền vẫn nhận diện được nhưng không chạy chuyển động.
 
-1. Giải nén gói ZIP.
-2. Mở GitHub Desktop, chọn repository `hieu-commits.github.io` → `Repository → Show in Explorer`.
-3. Sao lưu file cũ nếu bạn có chỉnh sửa riêng.
-4. Sao chép các file trong gói vào thư mục gốc local của repository, giữ nguyên thư mục `assets/`. Không đặt toàn bộ dự án vào một thư mục con.
-5. Trở lại GitHub Desktop, kiểm tra Changes, commit rồi Push origin.
-6. Mở `https://hieu-commits.github.io/`. Sau khi Pages deploy xong, refresh cứng bằng `Ctrl + F5`.
-
-**Không thay repository `hieu-commits`** — đó là nơi chứa README của GitHub Profile. Bộ này dành riêng cho website `hieu-commits.github.io`.
-
-## Các phần đã đồng bộ
-
-- Hero ghi tên trường rõ ràng bằng tiếng Anh: University of Science, Vietnam National University Ho Chi Minh City (HCMUS), kèm tên tiếng Việt Trường Đại học Khoa học Tự nhiên, Đại học Quốc gia Thành phố Hồ Chí Minh và liên kết đến website chính thức.
-- 6 nhóm: Software Engineering & AI; Networking & Infrastructure; Cyber Security; DevOps & Cloud; Database Engineering; IoT & Connected Systems.
-- Project area có 6 blueprint, mỗi thẻ đều ghi rõ `Planned build`. Đây không phải tuyên bố dự án đã hoàn thành; thay bằng URL repository thật khi bạn công bố dự án.
-- Có mẫu `docs/project-detail-template.html.template` để sao chép khi một dự án thật đã có README, source code, kết quả kiểm thử và giới hạn được ghi lại. Khi dùng, sao chép mẫu vào thư mục gốc, đổi tên thành `.html`, rồi thay toàn bộ placeholder. Để nguyên file `.template` sẽ không tạo một trang dự án mẫu trong website.
-- Hover card có viền ánh sáng nhẹ chỉ khi rê chuột; hiệu ứng bị giảm theo `prefers-reduced-motion`.
-- Không thêm email, chứng chỉ, số liệu sao, số contribution hay thành tựu chưa xác minh.
-
-## Cá nhân hóa trước khi gửi nhà tuyển dụng
-
-- Thêm link trực tiếp đến repository thật khi có dự án.
-- Thay project blueprint bằng phần mô tả có sơ đồ, lệnh chạy, test, kết quả và giới hạn.
-- Chỉ liệt kê công nghệ bạn đã sử dụng hoặc đang học thực sự.
-- Kiểm tra ở desktop, tablet và mobile; tránh commit API keys, mật khẩu hoặc tệp `.env`.
+Bản ZIP không tự triển khai lên website công khai. Cần commit và push để áp dụng.
