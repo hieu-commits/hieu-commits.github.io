@@ -3,12 +3,13 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#060914">
-  <meta name="description" content="Hieu's software engineering portfolio — C/C++, Python, AI, and practical engineering experiments.">
-  <meta property="og:title" content="Hieu — Software Engineering Portfolio">
-  <meta property="og:description" content="Code with intent. Build with curiosity. Improve through iteration.">
+  <meta name="theme-color" content="#070b16">
+  <meta name="description" content="Hieu's portfolio across software engineering, networking, Cyber Security, DevOps and Cloud, databases, IoT, and AI. A learning-focused portfolio built around evidence, practical labs, and clear technical notes.">
+  <meta property="og:title" content="Hieu — Software, Systems & Security">
+  <meta property="og:description" content="Build systems that make sense. Software, networks, security, data, and connected systems — explored through practical work.">
   <meta property="og:type" content="website">
-  <title>Hieu — Software Engineering Portfolio</title>
+  <meta property="og:url" content="https://hieu-commits.github.io/">
+  <title>Hieu — Software, Systems & Security</title>
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,6 +18,7 @@
   <script defer src="script.js"></script>
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
   <div class="ambient ambient-one" aria-hidden="true"></div>
   <div class="ambient ambient-two" aria-hidden="true"></div>
   <div class="page-grid" aria-hidden="true"></div>
@@ -24,124 +26,174 @@
   <header class="topbar">
     <a class="brand" href="#top" aria-label="Hieu portfolio home">
       <span class="brand-mark">HC<span>.</span></span>
-      <span class="brand-label">hieu-commits<span>/portfolio</span></span>
+      <span class="brand-label">hieu-commits<span> / portfolio</span></span>
     </a>
     <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="siteNav">
       <span></span><span></span>
     </button>
     <nav class="nav" id="siteNav" aria-label="Main navigation">
       <a href="#about">About</a>
-      <a href="#stack">Expertise</a>
-      <a href="#projects">Projects</a>
+      <a href="#expertise">Expertise</a>
+      <a href="#work">Project blueprints</a>
       <a href="#roadmap">Roadmap</a>
       <a class="nav-cta" href="#contact">Let's connect <span aria-hidden="true">↗</span></a>
     </nav>
   </header>
 
-  <main id="top">
-    <section class="hero section-wrap" aria-labelledby="heroTitle">
+  <main id="main">
+    <section class="hero section-wrap" id="top" aria-labelledby="heroTitle">
       <div class="hero-copy reveal">
-        <div class="eyebrow"><span class="pulse-dot"></span> SOFTWARE ENGINEERING · CONTINUOUS LEARNING</div>
-        <h1 id="heroTitle">Build things<br>that <span class="gradient-text">make sense.</span></h1>
-        <p class="hero-lead">Hi, I'm <strong>Hieu</strong> — an aspiring software engineer exploring how clean code, systems thinking, Python, and AI come together to solve real problems.</p>
+        <div class="eyebrow"><span class="status-dot" aria-hidden="true"></span> SOFTWARE · SYSTEMS · SECURITY</div>
+        <h1 id="heroTitle">Build systems<br>that <span class="gradient-text">make sense.</span></h1>
+        <p class="hero-lead">Hi, I'm <strong>Huỳnh Nhật Hiếu (Hieu)</strong> — a Software Engineering & Computer Science student at HCMUS, exploring how software, networks, security, and data work together to solve real problems.</p>
+        <p class="hero-subline">Curious by default. Intentional by design. <span>Evidence over claims.</span></p>
         <div class="hero-actions">
-          <a class="button button-primary" href="#projects">Explore the work <span aria-hidden="true">↘</span></a>
+          <a class="button button-primary" href="#work">Explore the work <span aria-hidden="true">↘</span></a>
           <a class="button button-ghost" href="https://github.com/hieu-commits" target="_blank" rel="noopener noreferrer">GitHub profile <span aria-hidden="true">↗</span></a>
         </div>
-        <div class="hero-footnote"><span class="mini-bars"><i></i><i></i><i></i><i></i></span><span>Curious by default. Intentional by design.</span></div>
+        <div class="hero-signature"><span class="signature-line"></span><span>LEARN / BUILD / VERIFY / IMPROVE</span></div>
       </div>
 
-      <div class="hero-visual reveal" aria-label="Abstract illustration of code, systems, and artificial intelligence" role="img">
-        <div class="visual-topline"><span>THINK / BUILD / ITERATE</span><span class="visual-live"><i></i> PORTFOLIO CONCEPT</span></div>
-        <img class="hero-art" src="assets/hero-visual.svg" alt="Abstract glowing AI core connected to software nodes">
-        <div class="float-chip chip-code"><span class="chip-glyph">{ }</span><span><b>C / C++</b><small>Systems & logic</small></span></div>
-        <div class="float-chip chip-python"><span class="python-glyph">Py</span><span><b>Python</b><small>Automation & data</small></span></div>
-        <div class="float-chip chip-ai"><span class="ai-glyph">✳</span><span><b>AI / ML</b><small>Explore & evaluate</small></span></div>
-        <div class="visual-corner corner-a"></div><div class="visual-corner corner-b"></div>
+      <div class="hero-visual reveal" aria-label="Conceptual view of software, infrastructure, security, data, and connected systems" role="img">
+        <div class="visual-topline"><span>SYSTEM MAP / 001</span><span class="visual-label">A CONNECTED VIEW</span></div>
+        <img class="hero-art" src="assets/hero-systems.svg" alt="Abstract systems diagram connecting software, networking, security, data, cloud, and IoT">
+        <div class="visual-caption"><span class="caption-mark">HC/</span><span><b>Systems thinking</b><small>Understand the layers. Trace the signals.</small></span></div>
+        <div class="visual-foot"><span>SOFTWARE</span><i></i><span>INFRASTRUCTURE</span><i></i><span>INTELLIGENCE</span></div>
       </div>
       <div class="hero-bottom-line"><span>01 / ENGINEERING MINDSET</span><span>LESS NOISE. MORE SIGNAL.</span></div>
     </section>
 
-    <section class="ticker" aria-label="Areas of interest">
-      <div class="ticker-track">
-        <span>SOFTWARE ENGINEERING</span><b>✳</b><span>C / C++</span><b>✳</b><span>PYTHON</span><b>✳</b><span>ARTIFICIAL INTELLIGENCE</span><b>✳</b><span>ALGORITHMS</span><b>✳</b><span>DEVELOPER TOOLS</span><b>✳</b>
-        <span aria-hidden="true">SOFTWARE ENGINEERING</span><b aria-hidden="true">✳</b><span aria-hidden="true">C / C++</span><b aria-hidden="true">✳</b><span aria-hidden="true">PYTHON</span><b aria-hidden="true">✳</b><span aria-hidden="true">ARTIFICIAL INTELLIGENCE</span><b aria-hidden="true">✳</b><span aria-hidden="true">ALGORITHMS</span><b aria-hidden="true">✳</b><span aria-hidden="true">DEVELOPER TOOLS</span><b aria-hidden="true">✳</b>
+    <div class="discipline-strip" aria-label="Areas of focus">
+      <div class="section-wrap strip-inner">
+        <span>AREAS OF FOCUS</span>
+        <div><b>Software Engineering & AI</b><i></i><b>Networking</b><i></i><b>Cyber Security</b><i></i><b>DevOps & Cloud</b><i></i><b>Databases</b><i></i><b>IoT</b></div>
       </div>
-    </section>
+    </div>
 
     <section class="section-wrap section-block" id="about">
       <div class="section-heading reveal">
         <div><span class="section-index">01 — THE PERSON</span><h2>Curiosity is the <span class="gradient-text">starting point.</span></h2></div>
-        <p>I care about understanding the why behind the code — not just making it run.</p>
+        <p>I care about understanding the “why” behind a system — not just making it run.</p>
       </div>
       <div class="about-grid">
         <article class="panel about-panel reveal">
           <div class="panel-label"><span class="panel-icon icon-cyan">⌘</span><span>ENGINEERING PHILOSOPHY</span></div>
           <h3>Learn deeply.<br><span class="muted-heading">Build deliberately.</span></h3>
-          <p>My focus is growing a strong foundation in programming, problem-solving, and software design. I use small experiments to turn abstract concepts into things I can test, explain, and improve.</p>
+          <p>My goal is to develop a strong foundation across software and IT systems. I use focused experiments to turn abstract concepts into work I can test, document, explain, and improve.</p>
           <div class="principle-list">
-            <div><span class="principle-number">A</span><span><b>Understand the problem</b><small>Clarify constraints before choosing tools.</small></span></div>
-            <div><span class="principle-number">B</span><span><b>Make it work, then make it clear</b><small>Readable code is a feature, not decoration.</small></span></div>
-            <div><span class="principle-number">C</span><span><b>Measure and iterate</b><small>Test assumptions. Document what changes.</small></span></div>
+            <div><span class="principle-number">A</span><span><b>Understand the problem</b><small>Define constraints before choosing tools.</small></span></div>
+            <div><span class="principle-number">B</span><span><b>Make it work, then make it clear</b><small>Readable design is part of correctness.</small></span></div>
+            <div><span class="principle-number">C</span><span><b>Verify, document, iterate</b><small>Show the evidence behind each conclusion.</small></span></div>
           </div>
         </article>
-        <article class="panel currently-panel reveal">
-          <div class="panel-label"><span class="panel-icon icon-violet">◈</span><span>CURRENTLY EXPLORING</span></div>
-          <div class="current-item"><div class="current-icon blue">C++</div><div><b>Core programming & algorithms</b><p>Pointers, memory, data structures, complexity, and debugging.</p></div><span class="current-arrow">↗</span></div>
-          <div class="current-item"><div class="current-icon yellow">Py</div><div><b>Python engineering</b><p>Reusable scripts, clean modules, automation, and data workflows.</p></div><span class="current-arrow">↗</span></div>
-          <div class="current-item"><div class="current-icon violet">AI</div><div><b>Artificial intelligence</b><p>Machine-learning foundations, experiments, and evaluation.</p></div><span class="current-arrow">↗</span></div>
-          <div class="panel-foot"><span class="pulse-dot"></span> Learning in public, one useful commit at a time.</div>
+        <article class="panel focus-panel reveal">
+          <div class="panel-label"><span class="panel-icon icon-violet">◈</span><span>CURRENT LEARNING APPROACH</span></div>
+          <div class="focus-row"><span class="focus-index">01</span><div><b>Build fundamentals</b><p>Programming, algorithms, operating systems, networking, and databases.</p></div></div>
+          <div class="focus-row"><span class="focus-index">02</span><div><b>Connect the layers</b><p>Understand how applications, infrastructure, identity, data, and security interact.</p></div></div>
+          <div class="focus-row"><span class="focus-index">03</span><div><b>Publish reproducible work</b><p>Clear READMEs, diagrams, setup steps, tests, and honest limitations.</p></div></div>
+          <div class="panel-foot"><span class="status-dot" aria-hidden="true"></span> Learning in public, one useful commit at a time.</div>
         </article>
       </div>
     </section>
 
-    <section class="section-wrap section-block" id="stack">
+    <section class="section-wrap section-block" id="expertise">
       <div class="section-heading reveal">
-        <div><span class="section-index">02 — THE TOOLBOX</span><h2>Technical <span class="gradient-text">interests.</span></h2></div>
-        <p>A focused learning map — not a claim to mastery.</p>
+        <div><span class="section-index">02 — THE TOOLBOX</span><h2>Technical <span class="gradient-text">landscape.</span></h2></div>
+        <p>Six connected domains. A learning map, not a claim to mastery.</p>
       </div>
-      <div class="stack-grid">
-        <article class="stack-card stack-blue reveal"><div class="stack-card-top"><span class="stack-icon">{ }</span><span class="stack-number">01</span></div><h3>Software Engineering</h3><p>Design, readable code, debugging, testing, and version control.</p><div class="tags"><span>OOP</span><span>Algorithms</span><span>Git</span><span>Testing</span></div><div class="stack-line"></div></article>
-        <article class="stack-card stack-cyan reveal"><div class="stack-card-top"><span class="stack-icon">C⁺</span><span class="stack-number">02</span></div><h3>C / C++</h3><p>Programming fundamentals, memory, pointers, and data structures.</p><div class="tags"><span>C</span><span>C++</span><span>STL</span><span>DSA</span></div><div class="stack-line"></div></article>
-        <article class="stack-card stack-gold reveal"><div class="stack-card-top"><span class="stack-icon">Py</span><span class="stack-number">03</span></div><h3>Python</h3><p>Automation, scripting, data processing, and practical tooling.</p><div class="tags"><span>Python 3</span><span>CLI tools</span><span>Data</span></div><div class="stack-line"></div></article>
-        <article class="stack-card stack-violet reveal"><div class="stack-card-top"><span class="stack-icon">✳</span><span class="stack-number">04</span></div><h3>Artificial Intelligence</h3><p>ML foundations, model experiments, evaluation, and responsible use.</p><div class="tags"><span>ML basics</span><span>Data prep</span><span>Evaluation</span></div><div class="stack-line"></div></article>
+      <div class="expertise-grid">
+        <article class="expertise-card tone-blue reveal">
+          <div class="card-top"><span class="domain-icon icon-code" aria-hidden="true">{ }</span><span class="card-number">01 / BUILD</span></div>
+          <h3>Software Engineering & AI</h3>
+          <p>Readable programs, algorithmic thinking, tests, automation, and careful AI experimentation.</p>
+          <div class="tag-list"><span>C / C++</span><span>Python</span><span>Algorithms</span><span>AI / ML</span><span>Git</span></div>
+          <div class="card-accent" aria-hidden="true"></div>
+        </article>
+        <article class="expertise-card tone-cyan reveal">
+          <div class="card-top"><span class="domain-icon icon-network" aria-hidden="true">⌘</span><span class="card-number">02 / CONNECT</span></div>
+          <h3>Networking & Infrastructure</h3>
+          <p>Addressing, routing, switching, segmentation, observability, and repeatable lab practice.</p>
+          <div class="tag-list"><span>TCP/IP</span><span>VLAN</span><span>Routing</span><span>DNS / IPv6</span><span>Wireshark</span></div>
+          <div class="card-accent" aria-hidden="true"></div>
+        </article>
+        <article class="expertise-card tone-violet reveal">
+          <div class="card-top"><span class="domain-icon icon-shield" aria-hidden="true">⬡</span><span class="card-number">03 / PROTECT</span></div>
+          <h3>Cyber Security</h3>
+          <p>Network visibility, defensive analysis, access control, hardening, and security labs in authorized environments.</p>
+          <div class="tag-list"><span>Traffic Analysis</span><span>Hardening</span><span>Firewall</span><span>IDS / IPS</span></div>
+          <div class="card-accent" aria-hidden="true"></div>
+        </article>
+        <article class="expertise-card tone-amber reveal">
+          <div class="card-top"><span class="domain-icon icon-cloud" aria-hidden="true">∞</span><span class="card-number">04 / SHIP</span></div>
+          <h3>DevOps & Cloud</h3>
+          <p>Reproducible deployments, versioned configuration, automation, and cloud fundamentals.</p>
+          <div class="tag-list"><span>Linux</span><span>Docker</span><span>CI / CD</span><span>GitHub Actions</span><span>Cloud</span></div>
+          <div class="card-accent" aria-hidden="true"></div>
+        </article>
+        <article class="expertise-card tone-green reveal">
+          <div class="card-top"><span class="domain-icon icon-database" aria-hidden="true">▤</span><span class="card-number">05 / ORGANIZE</span></div>
+          <h3>Database Engineering</h3>
+          <p>Relational modeling, normalization, query design, and reliable data access.</p>
+          <div class="tag-list"><span>SQL</span><span>Data Modeling</span><span>MySQL</span><span>PostgreSQL</span></div>
+          <div class="card-accent" aria-hidden="true"></div>
+        </article>
+        <article class="expertise-card tone-teal reveal">
+          <div class="card-top"><span class="domain-icon icon-iot" aria-hidden="true">◉</span><span class="card-number">06 / OBSERVE</span></div>
+          <h3>IoT & Connected Systems</h3>
+          <p>Device-to-service communication, telemetry, APIs, messaging, and integration patterns.</p>
+          <div class="tag-list"><span>MQTT</span><span>Telemetry</span><span>APIs</span><span>Connectivity</span></div>
+          <div class="card-accent" aria-hidden="true"></div>
+        </article>
       </div>
-      <div class="stack-note reveal"><span class="note-mark">i</span><p><strong>Portfolio principle:</strong> I will link only to work that exists and can be reviewed. Topics here represent my learning focus; they are not certifications or claims of professional mastery.</p></div>
+      <div class="scope-note reveal"><span class="note-mark">i</span><p><strong>How to read this section:</strong> these are the areas I study and build toward. Skills, tools, and depth will be updated as projects become reproducible and reviewable. No certification or mastery is implied.</p></div>
     </section>
 
-    <section class="section-wrap section-block" id="projects">
+    <section class="section-wrap section-block" id="work">
       <div class="section-heading reveal">
-        <div><span class="section-index">03 — SELECTED WORK</span><h2>Ideas become <span class="gradient-text">artifacts.</span></h2></div>
-        <a class="text-link" href="https://github.com/hieu-commits?tab=repositories" target="_blank" rel="noopener noreferrer">Browse GitHub repositories <span>↗</span></a>
+        <div><span class="section-index">03 — WORK IN PROGRESS</span><h2>Ideas become <span class="gradient-text">artifacts.</span></h2></div>
+        <a class="text-link" href="https://github.com/hieu-commits?tab=repositories" target="_blank" rel="noopener noreferrer">Browse public repositories <span aria-hidden="true">↗</span></a>
       </div>
+      <div class="work-intro reveal"><span class="work-intro-mark">BUILD LOG / 00</span><p>The concepts below are a roadmap for future lab work, not completed projects. As each one becomes real, this card will link to its source code, documentation, and evidence.</p></div>
       <div class="project-grid">
-        <article class="project-card project-cpp reveal">
-          <div class="project-art art-cpp"><div class="art-top"><span>CONCEPT / 001</span><span class="art-dot"></span></div><div class="code-window"><div class="window-controls"><i></i><i></i><i></i><span>main.cpp</span></div><div class="code-lines"><span><i>01</i><b class="code-purple">#include</b> <em>&lt;iostream&gt;</em></span><span><i>02</i><b class="code-cyan">int</b> main() {</span><span><i>03</i>&nbsp;&nbsp;std::cout &lt;&lt; <em>"Hello, world"</em>;</span><span><i>04</i>&nbsp;&nbsp;<b class="code-purple">return</b> 0;</span><span><i>05</i>}</span></div></div></div>
-          <div class="project-content"><div class="project-meta"><span class="project-type">PROJECT BLUEPRINT</span><span class="project-lang">C / C++</span></div><h3>C++ Systems Playground</h3><p>A home for compact experiments in algorithms, pointers, memory layout, and core computer-science concepts.</p><div class="project-bottom"><span class="project-state"><i></i> Ready to build</span><a href="https://github.com/hieu-commits?tab=repositories" target="_blank" rel="noopener noreferrer" aria-label="Open GitHub repositories">↗</a></div></div>
+        <article class="project-card project-blue reveal">
+          <div class="project-art art-software"><div class="art-meta"><span>BLUEPRINT / 001</span><span>SOFTWARE</span></div><div class="art-code"><span><i>01</i> <b>struct</b> <em>Problem</em> {</span><span><i>02</i> &nbsp; inputs;</span><span><i>03</i> &nbsp; constraints;</span><span><i>04</i> &nbsp; <b>solve</b>();</span><span><i>05</i> }</span></div><div class="art-orbit orbit-a"></div><div class="art-orbit orbit-b"></div></div>
+          <div class="project-content"><div class="project-meta"><span class="project-state"><i></i> Planned build</span><span class="project-category">C / C++ · Python</span></div><h3>Systems & Algorithms Playground</h3><p>Small, testable experiments around data structures, memory, algorithm complexity, and developer tooling.</p><div class="project-footer"><div class="project-tags"><span>C++</span><span>Python</span><span>Testing</span></div><a href="https://github.com/hieu-commits?tab=repositories" target="_blank" rel="noopener noreferrer" aria-label="Browse repositories for Systems and Algorithms Playground">Explore repositories ↗</a></div></div>
         </article>
-        <article class="project-card project-python reveal">
-          <div class="project-art art-python"><div class="art-top"><span>CONCEPT / 002</span><span class="art-dot"></span></div><div class="python-orbit"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="orbit-core">Py</div><span class="orbit-node node-one">ƒ</span><span class="orbit-node node-two">↗</span><span class="orbit-node node-three">⌘</span></div><div class="orbit-caption">AUTOMATE THE REPEATABLE</div></div>
-          <div class="project-content"><div class="project-meta"><span class="project-type">PROJECT BLUEPRINT</span><span class="project-lang">PYTHON</span></div><h3>Python Utility Lab</h3><p>A collection of small command-line tools for file workflows, data transformation, and repetitive developer tasks.</p><div class="project-bottom"><span class="project-state"><i></i> Ready to build</span><a href="https://github.com/hieu-commits?tab=repositories" target="_blank" rel="noopener noreferrer" aria-label="Open GitHub repositories">↗</a></div></div>
+        <article class="project-card project-cyan reveal">
+          <div class="project-art art-network"><div class="art-meta"><span>BLUEPRINT / 002</span><span>NETWORKS</span></div><svg class="project-graphic" viewBox="0 0 340 130" role="img" aria-label="Abstract network topology diagram"><g fill="none" stroke="currentColor" stroke-opacity=".52" stroke-width="1.5"><path d="M170 24 L76 57 L76 98 M170 24 L264 57 L264 98 M76 57 L170 84 L264 57 M170 84 L170 113"/><path d="M76 57 L170 24 L264 57" stroke-dasharray="3 5"/></g><g fill="#0b1427" stroke="currentColor" stroke-width="1.5"><rect x="139" y="9" width="62" height="30" rx="7"/><rect x="44" y="44" width="64" height="26" rx="7"/><rect x="232" y="44" width="64" height="26" rx="7"/><rect x="46" y="87" width="60" height="23" rx="7"/><rect x="234" y="87" width="60" height="23" rx="7"/><rect x="145" y="100" width="50" height="22" rx="7"/></g><g fill="currentColor"><circle cx="170" cy="24" r="3"/><circle cx="76" cy="57" r="3"/><circle cx="264" cy="57" r="3"/><circle cx="170" cy="84" r="3"/></g></svg></div>
+          <div class="project-content"><div class="project-meta"><span class="project-state"><i></i> Planned build</span><span class="project-category">Infrastructure</span></div><h3>Network Infrastructure Lab</h3><p>A documented lab for subnetting, VLAN segmentation, routing, firewall policies, and repeatable verification.</p><div class="project-footer"><div class="project-tags"><span>TCP/IP</span><span>VLAN</span><span>Wireshark</span></div><a href="https://github.com/hieu-commits?tab=repositories" target="_blank" rel="noopener noreferrer" aria-label="Browse repositories for Network Infrastructure Lab">Explore repositories ↗</a></div></div>
         </article>
-        <article class="project-card project-ai reveal">
-          <div class="project-art art-ai"><div class="art-top"><span>CONCEPT / 003</span><span class="art-dot"></span></div><div class="ai-network"><svg viewBox="0 0 300 150" role="img" aria-label="Abstract connected nodes"><g stroke="currentColor" stroke-opacity=".34" stroke-width="1.5"><path d="M30 80 L82 36 L128 65 L174 25 L220 65 L270 34 M30 80 L76 122 L128 65 L175 116 L220 65 L268 112 M82 36 L76 122 M174 25 L175 116 M128 65 L220 65"/></g><g fill="#0b142d" stroke="currentColor" stroke-width="2"><circle cx="30" cy="80" r="7"/><circle cx="82" cy="36" r="7"/><circle cx="76" cy="122" r="7"/><circle cx="128" cy="65" r="12"/><circle cx="174" cy="25" r="7"/><circle cx="175" cy="116" r="7"/><circle cx="220" cy="65" r="10"/><circle cx="270" cy="34" r="7"/><circle cx="268" cy="112" r="7"/></g><circle cx="128" cy="65" r="4" fill="#fff"/><circle cx="220" cy="65" r="3" fill="#fff"/></svg><span class="ai-core-label">MODEL / DATA / EVALUATION</span></div></div>
-          <div class="project-content"><div class="project-meta"><span class="project-type">PROJECT BLUEPRINT</span><span class="project-lang">AI / DATA</span></div><h3>AI Experiment Notebook</h3><p>A documented learning space for data preparation, baseline models, evaluation, and reproducible experiments.</p><div class="project-bottom"><span class="project-state"><i></i> Ready to build</span><a href="https://github.com/hieu-commits?tab=repositories" target="_blank" rel="noopener noreferrer" aria-label="Open GitHub repositories">↗</a></div></div>
+        <article class="project-card project-violet reveal">
+          <div class="project-art art-security"><div class="art-meta"><span>BLUEPRINT / 003</span><span>CYBER SECURITY</span></div><div class="security-rings"><span class="ring ring-one"></span><span class="ring ring-two"></span><span class="shield-core">◇</span><span class="ring-spark spark-one"></span><span class="ring-spark spark-two"></span></div><div class="art-caption">OBSERVE · DETECT · RESPOND</div></div>
+          <div class="project-content"><div class="project-meta"><span class="project-state"><i></i> Planned build</span><span class="project-category">Defensive security</span></div><h3>Cyber Security Lab</h3><p>Authorized lab notes for packet inspection, detection logic, access control, and system-hardening checks.</p><div class="project-footer"><div class="project-tags"><span>Traffic analysis</span><span>IDS / IPS</span><span>Linux</span></div><a href="https://github.com/hieu-commits?tab=repositories" target="_blank" rel="noopener noreferrer" aria-label="Browse repositories for Cyber Security Lab">Explore repositories ↗</a></div></div>
+        </article>
+        <article class="project-card project-amber reveal">
+          <div class="project-art art-devops"><div class="art-meta"><span>BLUEPRINT / 004</span><span>DEVOPS & CLOUD</span></div><div class="pipeline"><span>CODE</span><b>→</b><span>TEST</span><b>→</b><span>SHIP</span></div><div class="cloud-lines"><i></i><i></i><i></i><i></i><i></i></div></div>
+          <div class="project-content"><div class="project-meta"><span class="project-state"><i></i> Planned build</span><span class="project-category">Automation</span></div><h3>DevOps & Cloud Lab</h3><p>A reproducible delivery workflow with containerization, CI checks, environment configuration, and deployment notes.</p><div class="project-footer"><div class="project-tags"><span>Docker</span><span>CI / CD</span><span>Cloud</span></div><a href="https://github.com/hieu-commits?tab=repositories" target="_blank" rel="noopener noreferrer" aria-label="Browse repositories for DevOps and Cloud Lab">Explore repositories ↗</a></div></div>
+        </article>
+        <article class="project-card project-green reveal">
+          <div class="project-art art-database"><div class="art-meta"><span>BLUEPRINT / 005</span><span>DATA</span></div><div class="db-visual"><span></span><span></span><span></span><b>SQL</b></div><div class="db-query"><span>SELECT</span> schema, integrity<br><span>FROM</span> experiments<br><span>ORDER BY</span> clarity;</div></div>
+          <div class="project-content"><div class="project-meta"><span class="project-state"><i></i> Planned build</span><span class="project-category">Database</span></div><h3>Database Design Lab</h3><p>Relational modeling, normalization, query patterns, sample data, and notes on correctness and performance.</p><div class="project-footer"><div class="project-tags"><span>SQL</span><span>MySQL</span><span>PostgreSQL</span></div><a href="https://github.com/hieu-commits?tab=repositories" target="_blank" rel="noopener noreferrer" aria-label="Browse repositories for Database Design Lab">Explore repositories ↗</a></div></div>
+        </article>
+        <article class="project-card project-teal reveal">
+          <div class="project-art art-iot"><div class="art-meta"><span>BLUEPRINT / 006</span><span>IOT & CONNECTIVITY</span></div><div class="iot-device"><span class="device-dot"></span><span class="device-label">DEVICE</span><span class="signal signal-one"></span><span class="signal signal-two"></span></div><div class="iot-flow"><span>MQTT</span><i>→</i><span>API</span><i>→</i><span>DATA</span></div></div>
+          <div class="project-content"><div class="project-meta"><span class="project-state"><i></i> Planned build</span><span class="project-category">Connected systems</span></div><h3>IoT Connectivity Lab</h3><p>A system-level exploration of MQTT messaging, telemetry flows, APIs, and network-to-service integration.</p><div class="project-footer"><div class="project-tags"><span>MQTT</span><span>Telemetry</span><span>APIs</span></div><a href="https://github.com/hieu-commits?tab=repositories" target="_blank" rel="noopener noreferrer" aria-label="Browse repositories for IoT Connectivity Lab">Explore repositories ↗</a></div></div>
         </article>
       </div>
-      <p class="projects-disclaimer reveal">These are starter blueprints, not completed projects. Replace each card with a real repository, screenshots, setup steps, and technical decisions as you build them.</p>
+      <p class="projects-disclaimer reveal"><strong>Integrity note:</strong> these cards describe planned learning projects, not completed work. As each project becomes available, its link will point directly to the repository with setup instructions, diagrams, results, and limitations.</p>
     </section>
 
     <section class="section-wrap section-block roadmap-section" id="roadmap">
       <div class="section-heading reveal">
-        <div><span class="section-index">04 — THE NEXT ITERATION</span><h2>Keep the <span class="gradient-text">momentum.</span></h2></div>
-        <p>A practical path from fundamentals to demonstrable projects.</p>
+        <div><span class="section-index">04 — THE NEXT ITERATION</span><h2>From learning to <span class="gradient-text">evidence.</span></h2></div>
+        <p>A repeatable path from concept to a project someone else can run and review.</p>
       </div>
       <div class="roadmap panel reveal">
         <div class="roadmap-line" aria-hidden="true"></div>
-        <article class="roadmap-item"><div class="roadmap-node node-done">01</div><div><span class="roadmap-status">FOUNDATION</span><h3>Strengthen programming fundamentals</h3><p>C/C++, data structures, algorithms, memory, and debugging habits.</p></div><span class="roadmap-symbol">⌘</span></article>
-        <article class="roadmap-item"><div class="roadmap-node node-active">02</div><div><span class="roadmap-status">IN PRACTICE</span><h3>Ship useful Python tools</h3><p>Build small utilities with clear interfaces, tests, and documentation.</p></div><span class="roadmap-symbol">⌁</span></article>
-        <article class="roadmap-item"><div class="roadmap-node">03</div><div><span class="roadmap-status">NEXT FRONTIER</span><h3>Run measurable AI experiments</h3><p>Start with a baseline, define evaluation criteria, and record results.</p></div><span class="roadmap-symbol">✳</span></article>
-        <article class="roadmap-item"><div class="roadmap-node">04</div><div><span class="roadmap-status">SHIP IT</span><h3>Turn learning into portfolio-quality work</h3><p>Publish repositories with setup instructions, trade-offs, tests, and a demo.</p></div><span class="roadmap-symbol">↗</span></article>
+        <article class="roadmap-item"><div class="roadmap-node">01</div><div><span class="roadmap-status">FOUNDATIONS</span><h3>Strengthen core concepts</h3><p>Programming, algorithms, operating systems, networks, and relational data.</p></div><span class="roadmap-symbol">⌘</span></article>
+        <article class="roadmap-item"><div class="roadmap-node">02</div><div><span class="roadmap-status">LAB PRACTICE</span><h3>Build repeatable experiments</h3><p>Use isolated environments, clear assumptions, test cases, and observable outcomes.</p></div><span class="roadmap-symbol">⌁</span></article>
+        <article class="roadmap-item"><div class="roadmap-node">03</div><div><span class="roadmap-status">DOCUMENTATION</span><h3>Make the work understandable</h3><p>Write setup steps, diagrams, decisions, measurements, and known limitations.</p></div><span class="roadmap-symbol">▤</span></article>
+        <article class="roadmap-item"><div class="roadmap-node">04</div><div><span class="roadmap-status">PUBLISH</span><h3>Ship reviewable projects</h3><p>Link each finished project to code, evidence, and a clear technical narrative.</p></div><span class="roadmap-symbol">↗</span></article>
       </div>
     </section>
 
@@ -150,16 +202,16 @@
         <div class="contact-orb orb-left" aria-hidden="true"></div><div class="contact-orb orb-right" aria-hidden="true"></div>
         <span class="section-index">05 — OPEN CHANNEL</span>
         <h2>Have a good problem?<br><span class="gradient-text">Let's think it through.</span></h2>
-        <p>I'm interested in thoughtful engineering, useful tools, and learning from people who build with care.</p>
-        <div class="hero-actions contact-actions"><a class="button button-primary" href="https://github.com/hieu-commits" target="_blank" rel="noopener noreferrer">Connect on GitHub <span>↗</span></a><button class="button button-ghost" id="copyProfile" type="button">Copy profile link <span>⧉</span></button></div>
+        <p>I'm interested in thoughtful engineering, systems that work reliably, and people who build with care.</p>
+        <div class="hero-actions contact-actions"><a class="button button-primary" href="https://github.com/hieu-commits" target="_blank" rel="noopener noreferrer">Connect on GitHub <span aria-hidden="true">↗</span></a><button class="button button-ghost" id="copyPortfolio" type="button">Copy portfolio link <span aria-hidden="true">⧉</span></button></div>
         <p class="copy-feedback" id="copyFeedback" aria-live="polite"></p>
       </div>
     </section>
   </main>
 
   <footer class="footer section-wrap">
-    <a class="brand footer-brand" href="#top"><span class="brand-mark">HC<span>.</span></span><span class="brand-label">hieu-commits<span>/portfolio</span></span></a>
-    <p>Designed to learn. Built to improve.</p>
+    <a class="brand footer-brand" href="#top"><span class="brand-mark">HC<span>.</span></span><span class="brand-label">hieu-commits<span> / portfolio</span></span></a>
+    <p>Learn deeply. Build deliberately. Verify everything.</p>
     <div class="footer-right"><span>© <span id="year"></span> Hieu</span><a href="#top">Back to top ↑</a></div>
   </footer>
 </body>

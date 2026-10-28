@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 590" role="img" aria-labelledby="title desc">
+  <title id="title">Connected engineering systems</title><desc id="desc">A central systems core connecting software, infrastructure, security, data, cloud, and connected devices.</desc>
+  <defs>
+    <linearGradient id="edge" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#53dfff"/><stop offset=".48" stop-color="#588cff"/><stop offset="1" stop-color="#b17dff"/></linearGradient>
+    <linearGradient id="core" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#153b5c"/><stop offset="1" stop-color="#17153f"/></linearGradient>
+    <radialGradient id="glow"><stop stop-color="#4bdaf8" stop-opacity=".28"/><stop offset="1" stop-color="#4bdaf8" stop-opacity="0"/></radialGradient>
+    <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="7" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+  <rect width="720" height="590" fill="url(#glow)"/>
+  <g stroke="#527bb4" stroke-opacity=".11" stroke-width="1"><path d="M0 60H720M0 120H720M0 180H720M0 240H720M0 300H720M0 360H720M0 420H720M0 480H720M0 540H720"/><path d="M60 0V590M120 0V590M180 0V590M240 0V590M300 0V590M360 0V590M420 0V590M480 0V590M540 0V590M600 0V590M660 0V590"/></g>
+  <g fill="none" stroke="url(#edge)" stroke-width="2" stroke-opacity=".68"><path d="M360 294L177 142L117 142"/><path d="M360 294L543 142L605 142"/><path d="M360 294L164 294L105 294"/><path d="M360 294L556 294L615 294"/><path d="M360 294L180 442L115 442"/><path d="M360 294L540 442L608 442"/></g>
+  <g fill="#55dff8" filter="url(#softGlow)"><circle cx="360" cy="294" r="5"/><circle cx="177" cy="142" r="4"/><circle cx="543" cy="142" r="4"/><circle cx="164" cy="294" r="4"/><circle cx="556" cy="294" r="4"/><circle cx="180" cy="442" r="4"/><circle cx="540" cy="442" r="4"/></g>
+  <g fill="#0b1427" stroke="url(#edge)" stroke-width="1.5">
+    <rect x="43" y="91" width="150" height="101" rx="18"/><rect x="527" y="91" width="150" height="101" rx="18"/>
+    <rect x="31" y="244" width="148" height="101" rx="18"/><rect x="541" y="244" width="148" height="101" rx="18"/>
+    <rect x="42" y="392" width="150" height="101" rx="18"/><rect x="528" y="392" width="150" height="101" rx="18"/>
+  </g>
+  <g fill="#dbeaff" font-family="Arial, sans-serif" font-size="14" font-weight="700" text-anchor="middle">
+    <text x="118" y="165">SOFTWARE</text><text x="602" y="165">CLOUD</text><text x="105" y="318">NETWORK</text><text x="615" y="318">SECURITY</text><text x="117" y="466">DATABASE</text><text x="603" y="466">IOT / SIGNALS</text>
+  </g>
+  <g fill="none" stroke="#67dcf8" stroke-linecap="round" stroke-width="2">
+    <path d="M92 124h52M92 134h32M92 144h42"/><circle cx="568" cy="123" r="10"/><path d="M550 143c4-10 32-10 36 0M550 148h36"/>
+    <rect x="80" y="267" width="48" height="24" rx="6"/><path d="M104 291v12m-12 0h24m-34 11h44"/><path d="M592 275l22-8 22 8v20c0 12-22 19-22 19s-22-7-22-19z"/><path d="M608 289l5 5 9-12"/>
+    <ellipse cx="117" cy="419" rx="24" ry="8"/><path d="M93 419v24c0 5 11 9 24 9s24-4 24-9v-24M93 431c0 5 11 9 24 9s24-4 24-9"/>
+    <circle cx="603" cy="423" r="7"/><path d="M585 423c0-10 8-18 18-18m0 36c-10 0-18-8-18-18m36 0c0-10-8-18-18-18m0 36c10 0 18-8 18-18"/>
+  </g>
+  <circle cx="360" cy="294" r="107" fill="#050a16" fill-opacity=".8" stroke="url(#edge)" stroke-opacity=".22"/>
+  <circle cx="360" cy="294" r="84" fill="url(#core)" stroke="url(#edge)" stroke-width="2"/>
+  <circle cx="360" cy="294" r="64" fill="none" stroke="#5adff4" stroke-opacity=".22" stroke-dasharray="3 9"/>
+  <g filter="url(#softGlow)"><path d="M326 267h26v20h-26zM368 267h26v20h-26zM326 301h26v20h-26zM368 301h26v20h-26z" fill="none" stroke="#d9f6ff" stroke-width="2"/><path d="M352 277h16M360 287v14M352 311h16" stroke="#5fe5f8" stroke-width="2" stroke-linecap="round"/></g>
+  <g fill="#b8d9f6" font-family="Arial, sans-serif" text-anchor="middle"><text x="360" y="356" font-size="12" letter-spacing="3">SYSTEMS THINKING</text><text x="360" y="375" font-size="9" letter-spacing="1.7" fill="#718eaf">TRACE · TEST · IMPROVE</text></g>
+  <g fill="#89b7de" font-family="monospace" font-size="9" letter-spacing="2"><text x="28" y="35">HC / ENGINEERING MAP</text><text x="575" y="563">BUILD WITH EVIDENCE</text></g>
+</svg>

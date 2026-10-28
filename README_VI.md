@@ -1,69 +1,50 @@
-# Hieu Portfolio — hướng dẫn sử dụng (tiếng Việt)
+# Hieu Portfolio — hướng dẫn cập nhật (tiếng Việt)
 
-Website portfolio tĩnh, responsive, xây bằng HTML + CSS + JavaScript thuần. Không cần Node.js, framework, backend hay build step để deploy.
+Website tĩnh dùng HTML, CSS và JavaScript thuần. Bộ cập nhật này đồng bộ nhận diện với GitHub Profile `hieu-commits`: nền navy, cyan–blue–violet, card bo góc, nội dung theo 6 nhóm chuyên môn và nhấn mạnh bằng chứng thực tế thay vì tuyên bố quá mức.
 
-## 1. Cấu trúc thư mục
+## Cấu trúc
 
 ```text
-hieu-portfolio-website/
-├── index.html
-├── styles.css
-├── script.js
-├── assets/
-│   ├── hero-visual.svg
-│   └── favicon.svg
-└── README_VI.md
+hieu-commits.github.io/
+├── index.html                 # Trang portfolio
+├── styles.css                 # Design system, responsive, hover
+├── script.js                  # Menu mobile, reveal, copy link
+├── docs/
+│   └── project-detail-template.html.template # Mẫu trang chi tiết cho dự án thật
+├── README_VI.md               # Hướng dẫn
+├── .nojekyll
+└── assets/
+    ├── favicon.svg
+    └── hero-systems.svg
 ```
 
-## 2. Chạy thử trên máy tính
+## Chạy thử local
 
-**Cách nhanh:** nhấp đúp `index.html` để mở bằng trình duyệt. Phần lớn chức năng vẫn chạy được ở chế độ file local.
+Mở thư mục bằng VS Code; nên dùng Live Server để xem hành vi điều hướng và responsive. Có thể mở trực tiếp `index.html` trong trình duyệt cho lần xem nhanh.
 
-**Cách nên dùng:** mở thư mục bằng VS Code, cài extension Live Server (nếu đã có VS Code), nhấp phải `index.html` → **Open with Live Server**.
+## Cập nhật GitHub Pages
 
-## 3. Cá nhân hóa nội dung trước khi công khai
+1. Giải nén gói ZIP.
+2. Mở GitHub Desktop, chọn repository `hieu-commits.github.io` → `Repository → Show in Explorer`.
+3. Sao lưu file cũ nếu bạn có chỉnh sửa riêng.
+4. Sao chép các file trong gói vào thư mục gốc local của repository, giữ nguyên thư mục `assets/`. Không đặt toàn bộ dự án vào một thư mục con.
+5. Trở lại GitHub Desktop, kiểm tra Changes, commit rồi Push origin.
+6. Mở `https://hieu-commits.github.io/`. Sau khi Pages deploy xong, refresh cứng bằng `Ctrl + F5`.
 
-Mở `index.html` và tìm các nội dung sau:
+**Không thay repository `hieu-commits`** — đó là nơi chứa README của GitHub Profile. Bộ này dành riêng cho website `hieu-commits.github.io`.
 
-- `Hieu`, `hieu-commits`, mô tả bản thân: chỉnh theo tên/giới thiệu bạn muốn công khai.
-- Khu vực `CURRENTLY EXPLORING`: cập nhật các chủ đề bạn đang học thực tế.
-- `Technical interests`: đây là bản đồ chủ đề, không tự nhận là kỹ năng chuyên gia.
-- `PROJECT BLUEPRINT`: 3 thẻ C++ / Python / AI hiện là ý tưởng dự án mẫu, **không phải dự án hoàn thành**. Khi có repo thật, đổi tiêu đề, mô tả, badge, trạng thái và URL GitHub trong từng thẻ.
-- GitHub link đã được gắn tới `https://github.com/hieu-commits`. Nếu đổi username, tìm và thay link trong `index.html` và `script.js`.
-- Không có email hoặc số liệu thành tích giả được đặt làm thông tin thật.
+## Các phần đã đồng bộ
 
-Màu sắc, spacing, responsive layout và hiệu ứng nằm trong `styles.css`. Hành vi menu mobile, reveal khi cuộn, năm hiện tại và nút copy link nằm trong `script.js`.
+- Hero nhắc đến Software Engineering & Computer Science student at HCMUS.
+- 6 nhóm: Software Engineering & AI; Networking & Infrastructure; Cyber Security; DevOps & Cloud; Database Engineering; IoT & Connected Systems.
+- Project area có 6 blueprint, mỗi thẻ đều ghi rõ `Planned build`. Đây không phải tuyên bố dự án đã hoàn thành; thay bằng URL repository thật khi bạn công bố dự án.
+- Có mẫu `docs/project-detail-template.html.template` để sao chép khi một dự án thật đã có README, source code, kết quả kiểm thử và giới hạn được ghi lại. Khi dùng, sao chép mẫu vào thư mục gốc, đổi tên thành `.html`, rồi thay toàn bộ placeholder. Để nguyên file `.template` sẽ không tạo một trang dự án mẫu trong website.
+- Hover card có viền ánh sáng nhẹ chỉ khi rê chuột; hiệu ứng bị giảm theo `prefers-reduced-motion`.
+- Không thêm email, chứng chỉ, số liệu sao, số contribution hay thành tựu chưa xác minh.
 
-## 4. Đưa website lên GitHub Pages
+## Cá nhân hóa trước khi gửi nhà tuyển dụng
 
-### Cách khuyến nghị: tạo website cá nhân riêng
-
-1. Đăng nhập GitHub.
-2. Tạo repository **`hieu-commits.github.io`** (đúng username; chọn Public nếu dùng GitHub Free).
-3. Upload các mục `index.html`, `styles.css`, `script.js`, thư mục `assets/` và có thể thêm file hướng dẫn này vào **thư mục gốc** của repository.
-4. Nhấn **Commit changes**.
-5. Vào repository → **Settings** → **Pages**.
-6. Trong **Build and deployment**, chọn **Deploy from a branch**.
-7. Chọn branch `main`, folder `/(root)`, nhấn **Save**.
-8. Đợi GitHub build và mở `https://hieu-commits.github.io`.
-
-GitHub cho biết thay đổi có thể mất đến khoảng 10 phút để xuất hiện. Tham khảo tài liệu chính thức: https://docs.github.com/en/pages/quickstart
-
-### Nếu không muốn tạo repository mang tên username.github.io
-
-Có thể tạo một repository dự án khác, bật Pages từ `Settings → Pages` và publish từ `main / (root)`. URL thường có dạng `https://hieu-commits.github.io/TEN-REPOSITORY/`. Với website cá nhân, cách `hieu-commits.github.io` gọn hơn.
-
-## 5. Liên kết từ profile README
-
-Sau khi website chạy, thêm vào README của repository profile `hieu-commits`:
-
-```md
-[🌐 Visit my portfolio](https://hieu-commits.github.io)
-```
-
-## 6. Trước khi gửi nhà tuyển dụng
-
-- Thay các project blueprint bằng 2–3 dự án thật, mỗi dự án có README, hướng dẫn chạy và ảnh/demo nếu có.
-- Không thêm số sao, số contribution, kinh nghiệm, chứng chỉ hoặc kết quả AI nếu chưa có cơ sở xác minh.
-- Kiểm tra trên màn hình điện thoại và desktop.
-- Không commit token, API key, mật khẩu, tệp `.env` hay dữ liệu riêng tư. Website GitHub Pages là công khai.
+- Thêm link trực tiếp đến repository thật khi có dự án.
+- Thay project blueprint bằng phần mô tả có sơ đồ, lệnh chạy, test, kết quả và giới hạn.
+- Chỉ liệt kê công nghệ bạn đã sử dụng hoặc đang học thực sự.
+- Kiểm tra ở desktop, tablet và mobile; tránh commit API keys, mật khẩu hoặc tệp `.env`.

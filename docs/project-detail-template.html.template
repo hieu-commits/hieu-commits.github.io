@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#070b16">
+  <meta name="description" content="Project detail template for Hieu's engineering portfolio. Replace placeholders before publishing.">
+  <title>Project name — Hieu Portfolio</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="ambient ambient-one" aria-hidden="true"></div><div class="ambient ambient-two" aria-hidden="true"></div><div class="page-grid" aria-hidden="true"></div>
+  <header class="topbar">
+    <a class="brand" href="index.html" aria-label="Back to Hieu portfolio"><span class="brand-mark">HC<span>.</span></span><span class="brand-label">hieu-commits<span> / portfolio</span></span></a>
+    <nav class="nav" aria-label="Project navigation"><a href="index.html#expertise">Expertise</a><a href="index.html#work">Project blueprints</a><a class="nav-cta" href="https://github.com/hieu-commits" target="_blank" rel="noopener noreferrer">GitHub ↗</a></nav>
+  </header>
+  <main id="top">
+    <!-- Duplicate this file for a real project, then replace every bracketed placeholder. -->
+    <section class="section-wrap project-detail-hero">
+      <span class="section-index">PROJECT DETAIL / [NUMBER] · [DOMAIN]</span>
+      <h1>[Project name] <span class="gradient-text">[short outcome]</span></h1>
+      <p class="hero-lead">[Explain the problem this project solves, who it helps, and what you built. Keep this factual and concise.]</p>
+      <div class="hero-actions"><a class="button button-primary" href="[REPOSITORY_URL]" target="_blank" rel="noopener noreferrer">View source code ↗</a><a class="button button-ghost" href="index.html#work">Back to portfolio ↗</a></div>
+    </section>
+    <section class="section-wrap section-block">
+      <div class="project-detail-grid">
+        <article class="panel project-detail-panel">
+          <div class="panel-label"><span class="panel-icon icon-cyan">⌘</span><span>ENGINEERING NOTES</span></div>
+          <h2>Problem & approach</h2>
+          <p>[Describe the requirement, constraints, architecture, and why the main technical choices were made.]</p>
+          <h2>Implementation</h2>
+          <p>[Explain the key modules, data flow, configuration, or algorithms. Link to relevant source files if useful.]</p>
+          <h2>Validation & results</h2>
+          <p>[Add test commands, screenshots, metrics, packet captures, benchmark results, or other reproducible evidence. Do not invent results.]</p>
+          <h2>Limitations & next steps</h2>
+          <p>[State what is incomplete, what you learned, and what you would improve next.]</p>
+        </article>
+        <aside class="panel project-detail-panel">
+          <div class="panel-label"><span class="panel-icon icon-violet">◈</span><span>PROJECT DETAILS</span></div>
+          <dl class="project-meta-list">
+            <div><dt>Status</dt><dd>[Prototype / In progress / Complete]</dd></div>
+            <div><dt>Role</dt><dd>[Your role]</dd></div>
+            <div><dt>Stack</dt><dd>[Languages and tools actually used]</dd></div>
+            <div><dt>Environment</dt><dd>[OS, runtime, lab, cloud or test setup]</dd></div>
+            <div><dt>License</dt><dd>[License or not specified]</dd></div>
+          </dl>
+        </aside>
+      </div>
+    </section>
+  </main>
+  <footer class="footer section-wrap"><a class="brand footer-brand" href="index.html"><span class="brand-mark">HC<span>.</span></span><span class="brand-label">hieu-commits<span> / portfolio</span></span></a><p>Learn deeply. Build deliberately. Verify everything.</p><div class="footer-right"><span>© <span id="year">2026</span> Hieu</span><a href="#top">Back to top ↑</a></div></footer>
+</body>
+</html>
