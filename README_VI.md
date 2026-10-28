@@ -48,3 +48,8 @@ Mở thư mục bằng VS Code; nên dùng Live Server để xem hành vi điề
 - Thay project blueprint bằng phần mô tả có sơ đồ, lệnh chạy, test, kết quả và giới hạn.
 - Chỉ liệt kê công nghệ bạn đã sử dụng hoặc đang học thực sự.
 - Kiểm tra ở desktop, tablet và mobile; tránh commit API keys, mật khẩu hoặc tệp `.env`.
+
+
+## Accessibility note: Skip to content
+
+The skip link is kept for keyboard accessibility, but it is positioned outside the viewport by default. It appears only when reached using keyboard focus (`:focus-visible`); mouse focus does not reveal it. The stylesheet URL uses a version query so browsers fetch the updated CSS after deployment.
