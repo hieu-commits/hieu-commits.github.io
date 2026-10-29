@@ -578,3 +578,156 @@ h1 { margin: 25px 0 20px; font-size: clamp(52px, 6.4vw, 88px); line-height: 1.02
     opacity: .30;
   }
 }
+
+
+/* ================================================================
+   GLASS TILT + SWORD SHEEN — Quantum Orbit upgrade
+   Pointer-responsive 3D tilt and a sharp reflective blade across the card.
+   The existing Orbit, Scanner Sweep and Circuit Pulse layers remain intact.
+   ================================================================ */
+.expertise-card,
+.project-card {
+  --tilt-x: 0deg;
+  --tilt-y: 0deg;
+  --shine-x: 50%;
+  --shine-y: 35%;
+  --shine-pos-x: 50%;
+  --shine-pos-y: 50%;
+  --shine-angle: 112deg;
+  transform-style: preserve-3d;
+  transform-origin: center center;
+  backface-visibility: hidden;
+}
+
+/* A transparent layer above the card content, clipped to the rounded glass. */
+.card-sheen {
+  position: absolute;
+  z-index: 3;
+  inset: 0;
+  display: block;
+  overflow: hidden;
+  border-radius: inherit;
+  pointer-events: none;
+  opacity: 0;
+  isolation: isolate;
+  mix-blend-mode: screen;
+  transition: opacity .22s ease;
+}
+.expertise-card > .card-sheen {
+  position: absolute;
+  z-index: 3;
+}
+
+/* Angle-aware specular reflection: broad glass glow + a razor-thin sword edge. */
+.card-sheen::before,
+.card-sheen::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+}
+.card-sheen::before {
+  inset: -1%;
+  border-radius: inherit;
+  background-image:
+    radial-gradient(ellipse at var(--shine-x, 50%) var(--shine-y, 35%),
+      rgba(248, 253, 255, .22) 0,
+      rgba(var(--accent-rgb), .13) 12%,
+      rgba(var(--accent-rgb), .055) 27%,
+      transparent 57%),
+    linear-gradient(var(--shine-angle, 112deg),
+      transparent 0%, transparent 44%,
+      rgba(var(--accent-rgb), .08) 47%,
+      rgba(226, 249, 255, .42) 49.1%,
+      rgba(255, 255, 255, .98) 49.8%,
+      rgba(255, 255, 255, 1) 50%,
+      rgba(91, 222, 255, .82) 50.35%,
+      rgba(102, 151, 255, .52) 51%,
+      rgba(180, 154, 255, .20) 52.1%,
+      transparent 56%, transparent 100%);
+  background-size: 100% 100%, 240% 240%;
+  background-position: center, var(--shine-pos-x, 50%) var(--shine-pos-y, 50%);
+  background-repeat: no-repeat;
+  opacity: .92;
+  filter: drop-shadow(0 0 5px rgba(var(--accent-rgb), .42));
+  transition: background-position .10s linear, opacity .18s ease;
+}
+
+/* A periodic, blade-like pass gives Scanner Sweep a visible highlight. */
+.card-sheen::after {
+  top: -42%;
+  bottom: -42%;
+  left: -40%;
+  width: 20%;
+  border-radius: 50%;
+  opacity: 0;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    rgba(var(--accent-rgb), .04) 17%,
+    rgba(var(--accent-rgb), .24) 36%,
+    rgba(240, 251, 255, .88) 47%,
+    rgba(255, 255, 255, 1) 50%,
+    rgba(89, 221, 255, .88) 54%,
+    rgba(107, 135, 255, .52) 63%,
+    rgba(180, 154, 255, .22) 74%,
+    transparent 100%);
+  filter: drop-shadow(0 0 4px rgba(236, 251, 255, .62))
+          drop-shadow(0 0 12px rgba(var(--accent-rgb), .68))
+          drop-shadow(0 0 18px rgba(122, 91, 255, .25));
+  transform: translateX(0) skewX(-19deg);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .expertise-card:hover,
+  .project-card:hover {
+    transform: perspective(1050px)
+      rotateX(var(--tilt-x, 0deg))
+      rotateY(var(--tilt-y, 0deg))
+      translateY(-3px)
+      scale(1.006);
+  }
+  .expertise-card:hover .card-sheen,
+  .project-card:hover .card-sheen {
+    opacity: 1;
+  }
+  .expertise-card:hover .card-sheen::after,
+  .project-card:hover .card-sheen::after {
+    animation: swordSheenSweep 4.4s cubic-bezier(.22, .68, .18, 1) infinite;
+  }
+  /* Keep the original scanner underneath, but reduce it so the sword reflection leads. */
+  .expertise-card:hover::before,
+  .project-card:hover::before {
+    opacity: .42;
+  }
+}
+
+@keyframes swordSheenSweep {
+  0%, 5% {
+    opacity: 0;
+    transform: translateX(0) skewX(-19deg);
+  }
+  12% { opacity: .72; }
+  18% { opacity: 1; }
+  46% {
+    opacity: .88;
+    transform: translateX(360%) skewX(-19deg);
+  }
+  60%, 100% {
+    opacity: 0;
+    transform: translateX(700%) skewX(-19deg);
+  }
+}
+
+/* On reduced-motion settings, keep a subtle static glass highlight without 3D movement. */
+@media (prefers-reduced-motion: reduce) {
+  .expertise-card,
+  .project-card {
+    transform-style: flat;
+  }
+  .card-sheen {
+    display: none !important;
+  }
+  .expertise-card:hover,
+  .project-card:hover {
+    transform: none !important;
+  }
+}
