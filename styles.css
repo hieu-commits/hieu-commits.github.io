@@ -836,12 +836,14 @@ h1 { margin: 25px 0 20px; font-size: clamp(52px, 6.4vw, 88px); line-height: 1.02
 .iteration-stage-head {
   position: relative;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
+  gap: 8px;
   min-height: 46px;
   margin-bottom: 22px;
 }
 .iteration-icon {
+  flex: 0 0 46px;
   display: grid;
   place-items: center;
   width: 46px;
@@ -855,15 +857,17 @@ h1 { margin: 25px 0 20px; font-size: clamp(52px, 6.4vw, 88px); line-height: 1.02
 }
 .iteration-icon svg { width: 22px; height: 22px; stroke: currentColor; stroke-width: 1.45; stroke-linecap: round; stroke-linejoin: round; }
 .iteration-step {
-  position: absolute;
-  top: 1px;
-  right: 0;
+  position: relative;
+  top: auto;
+  right: auto;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 4px;
   width: max-content;
-  max-width: none;
+  max-width: 100%;
+  flex: 0 0 auto;
+  margin-left: auto;
   flex-wrap: nowrap;
   white-space: nowrap;
   padding: 5px 7px;
@@ -936,17 +940,22 @@ h1 { margin: 25px 0 20px; font-size: clamp(52px, 6.4vw, 88px); line-height: 1.02
   .iteration-stage:hover .iteration-icon { transform: translateZ(16px); box-shadow: 0 0 0 6px rgba(8,15,29,.90), inset 0 1px 0 rgba(255,255,255,.08), 0 0 25px rgba(var(--accent-rgb), .20); }
 }
 @media (max-width: 1100px) {
+  .iteration-pipeline { gap: 12px; padding: 18px; }
+  .iteration-stage { padding: 18px 15px 16px; }
+  .iteration-stage-head { margin-bottom: 16px; }
+  .iteration-stage h3 { font-size: 14px; }
+}
+@media (max-width: 850px) {
   .iteration-pipeline { grid-template-columns: repeat(2, minmax(0,1fr)); gap: 14px; padding: 18px; }
   .iteration-pipeline::before, .iteration-pipeline::after { display: none; }
-  .iteration-stage { min-height: 270px; }
-  .iteration-stage-head { margin-bottom: 16px; }
+  .iteration-stage { min-height: 270px; padding: 18px 16px 16px; }
 }
 @media (max-width: 600px) {
   .iteration-pipeline { grid-template-columns: 1fr; gap: 12px; padding: 13px; border-radius: 22px; }
   .iteration-stage { min-height: 0; padding: 19px 18px 16px; }
-  .iteration-stage-head { justify-content: flex-start; margin-bottom: 15px; }
+  .iteration-stage-head { justify-content: space-between; margin-bottom: 15px; }
   .iteration-stage h3 { min-height: 0; }
-  .iteration-step { top: 12px; }
+  .iteration-step { top: auto; right: auto; }
   .iteration-output { margin-top: 19px; }
   .iteration-loop { align-items: flex-start; flex-direction: column; gap: 8px; }
   .iteration-loop-flow { gap: 7px; font-size: 8px; }
