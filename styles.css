@@ -731,3 +731,209 @@ h1 { margin: 25px 0 20px; font-size: clamp(52px, 6.4vw, 88px); line-height: 1.02
     transform: none !important;
   }
 }
+
+
+/* ================================================================
+   04 / THE NEXT ITERATION — signal pipeline + glass stage cards
+   Works alongside Quantum Dual Orbit, Circuit Pulse and Glass Tilt.
+   ================================================================ */
+.iteration-pipeline {
+  --pipeline-gap: 16px;
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--pipeline-gap);
+  padding: 24px;
+  overflow: hidden;
+  border: 1px solid rgba(109, 154, 220, .20);
+  border-radius: 27px;
+  background:
+    radial-gradient(ellipse at 13% 0%, rgba(70, 204, 245, .075), transparent 36%),
+    radial-gradient(ellipse at 95% 100%, rgba(140, 107, 255, .075), transparent 38%),
+    linear-gradient(145deg, rgba(10, 19, 37, .86), rgba(7, 13, 26, .80));
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.035), 0 22px 55px rgba(0,0,0,.12);
+}
+.iteration-pipeline::before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  pointer-events: none;
+  top: 47px;
+  left: 12.5%;
+  right: 12.5%;
+  height: 1px;
+  background: linear-gradient(90deg,
+    rgba(86,222,245,.56), rgba(102,151,255,.45),
+    rgba(180,154,255,.52), rgba(86,223,194,.42));
+  opacity: .62;
+}
+.iteration-pipeline::after {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  pointer-events: none;
+  top: 45px;
+  left: 12.5%;
+  width: 12%;
+  height: 4px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, transparent, rgba(101,224,255,.75), #f5fdff 48%, rgba(170,153,255,.72), transparent);
+  filter: blur(.25px) drop-shadow(0 0 5px rgba(85,213,255,.65)) drop-shadow(0 0 10px rgba(125,102,255,.26));
+  opacity: .9;
+  animation: iterationSignalFlow 5.2s cubic-bezier(.25,.7,.25,1) infinite;
+}
+.iteration-stage {
+  --accent: var(--cyan);
+  --accent-rgb: 86,222,245;
+  --tilt-x: 0deg;
+  --tilt-y: 0deg;
+  --shine-x: 50%;
+  --shine-y: 35%;
+  --shine-pos-x: 50%;
+  --shine-pos-y: 50%;
+  --shine-angle: 112deg;
+  position: relative;
+  z-index: 1;
+  isolation: isolate;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 300px;
+  padding: 21px 20px 18px;
+  overflow: hidden;
+  border: 1px solid rgba(var(--accent-rgb), .23);
+  border-radius: 20px;
+  background:
+    radial-gradient(ellipse at var(--shine-x,50%) var(--shine-y,35%), rgba(var(--accent-rgb),.095), transparent 52%),
+    linear-gradient(145deg, rgba(13,23,43,.88), rgba(7,14,27,.91));
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.035), 0 12px 30px rgba(0,0,0,.12);
+  transform-style: preserve-3d;
+  transform-origin: center center;
+  backface-visibility: hidden;
+  transition: transform .28s cubic-bezier(.2,.7,.2,1), border-color .24s ease, box-shadow .28s ease, background-position .12s linear;
+}
+.iteration-stage::before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  right: -44px;
+  bottom: -55px;
+  width: 148px;
+  height: 148px;
+  border: 1px solid rgba(var(--accent-rgb), .13);
+  border-radius: 28px;
+  transform: rotate(32deg);
+  box-shadow: 0 0 0 13px rgba(var(--accent-rgb), .018), 0 0 0 27px rgba(var(--accent-rgb), .012);
+  pointer-events: none;
+}
+.iteration-stage > :not(.card-sheen) { position: relative; z-index: 1; }
+.iteration-stage .card-sheen { z-index: 3; }
+.stage-foundations { --accent: #58ddf5; --accent-rgb: 88,221,245; }
+.stage-labs { --accent: #72c8ff; --accent-rgb: 114,200,255; }
+.stage-documentation { --accent: #b49aff; --accent-rgb: 180,154,255; }
+.stage-publish { --accent: #78e9c5; --accent-rgb: 120,233,197; }
+.iteration-stage-head {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 46px;
+  margin-bottom: 22px;
+}
+.iteration-icon {
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  border: 1px solid rgba(var(--accent-rgb), .53);
+  border-radius: 15px;
+  color: var(--accent);
+  background: linear-gradient(145deg, rgba(var(--accent-rgb), .17), rgba(var(--accent-rgb), .055));
+  box-shadow: 0 0 0 6px rgba(8,15,29,.90), inset 0 1px 0 rgba(255,255,255,.06), 0 0 22px rgba(var(--accent-rgb), .10);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+.iteration-icon svg { width: 22px; height: 22px; stroke: currentColor; stroke-width: 1.45; stroke-linecap: round; stroke-linejoin: round; }
+.iteration-step {
+  position: absolute;
+  top: 1px;
+  right: 0;
+  color: #8196b5;
+  font: 8px var(--mono);
+  letter-spacing: .4px;
+}
+.iteration-step i { color: #556b8b; font-style: normal; }
+.iteration-kicker {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-bottom: 9px;
+  color: var(--accent);
+  font: 9px var(--mono);
+  letter-spacing: 1.05px;
+}
+.iteration-kicker span { display: inline-block; width: 5px; height: 5px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 9px rgba(var(--accent-rgb), .66); }
+.iteration-stage h3 { margin: 0 0 9px; color: #edf5ff; font-size: 15px; line-height: 1.43; letter-spacing: -.35px; }
+.iteration-stage p { margin: 0; color: #9aaeca; font-size: 10px; line-height: 1.9; }
+.iteration-output {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 7px;
+  margin-top: auto;
+  padding-top: 15px;
+  border-top: 1px solid rgba(var(--accent-rgb), .16);
+}
+.iteration-output span { color: #647b9c; font: 8px var(--mono); letter-spacing: 1px; }
+.iteration-output strong { color: #c9d8ee; font: 9px var(--mono); font-weight: 500; }
+.iteration-loop {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  margin-top: 16px;
+  padding: 0 4px;
+}
+.iteration-loop-label { color: #7087a9; font: 8px var(--mono); letter-spacing: 1.1px; }
+.iteration-loop-flow { display: flex; align-items: center; flex-wrap: wrap; gap: 10px; color: #b8c8df; font: 9px var(--mono); letter-spacing: .7px; }
+.iteration-loop-flow b { color: var(--cyan); font-size: 12px; font-weight: 400; text-shadow: 0 0 9px rgba(86,222,245,.24); }
+@keyframes iterationSignalFlow {
+  0% { left: 12.5%; opacity: 0; }
+  9% { opacity: .95; }
+  84% { opacity: .90; }
+  100% { left: 75.5%; opacity: 0; }
+}
+@media (hover: hover) and (pointer: fine) {
+  .iteration-stage:hover {
+    z-index: 2;
+    border-color: rgba(var(--accent-rgb), .58);
+    transform: perspective(1050px) rotateX(var(--tilt-x,0deg)) rotateY(var(--tilt-y,0deg)) translateY(-3px) scale(1.008);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.055), 0 20px 44px rgba(0,0,0,.28), 0 0 26px rgba(var(--accent-rgb), .10);
+  }
+  .iteration-stage:hover .card-sheen { opacity: .96; }
+  .iteration-stage:hover .card-sheen::after { animation: swordSheenSweep 4.4s cubic-bezier(.22,.68,.18,1) infinite; }
+  .iteration-stage:hover .iteration-icon { transform: translateZ(16px); box-shadow: 0 0 0 6px rgba(8,15,29,.90), inset 0 1px 0 rgba(255,255,255,.08), 0 0 25px rgba(var(--accent-rgb), .20); }
+}
+@media (max-width: 1100px) {
+  .iteration-pipeline { grid-template-columns: repeat(2, minmax(0,1fr)); gap: 14px; padding: 18px; }
+  .iteration-pipeline::before, .iteration-pipeline::after { display: none; }
+  .iteration-stage { min-height: 270px; }
+  .iteration-stage-head { margin-bottom: 16px; }
+}
+@media (max-width: 600px) {
+  .iteration-pipeline { grid-template-columns: 1fr; gap: 12px; padding: 13px; border-radius: 22px; }
+  .iteration-stage { min-height: 0; padding: 19px 18px 16px; }
+  .iteration-stage-head { justify-content: flex-start; margin-bottom: 15px; }
+  .iteration-step { top: 12px; }
+  .iteration-output { margin-top: 19px; }
+  .iteration-loop { align-items: flex-start; flex-direction: column; gap: 8px; }
+  .iteration-loop-flow { gap: 7px; font-size: 8px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .iteration-pipeline::after { animation: none !important; opacity: .24; left: 12.5%; }
+  .iteration-stage { transform: none !important; transition: none !important; }
+  .iteration-stage:hover .card-sheen,
+  .iteration-stage:hover .card-sheen::after { display: none !important; animation: none !important; }
+}
