@@ -55,7 +55,7 @@
   /* Pointer-driven curved-glass response: tilt and specular sheen follow the cursor. */
   const finePointerQuery = window.matchMedia('(hover: hover) and (pointer: fine)');
   if (!reduceMotion && finePointerQuery.matches) {
-    const cards = document.querySelectorAll('.expertise-card, .project-card, .iteration-stage');
+    const cards = document.querySelectorAll('.expertise-card, .project-card, .iteration-stage, .dna-hero, .dna-principle');
     const clamp = (value, min, max) => Math.min(max, Math.max(min, value));
 
     cards.forEach((card) => {

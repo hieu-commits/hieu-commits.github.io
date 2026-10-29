@@ -14,8 +14,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=20261029-pipeline-grid-fix-v10">
-  <script defer src="script.js?v=20261029-pipeline-grid-fix-v10"></script>
+  <link rel="stylesheet" href="styles.css?v=20261029-engineering-dna-v11">
+  <script defer src="script.js?v=20261029-engineering-dna-v11"></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -93,29 +93,112 @@
       </div>
     </section>
 
-    <section class="section-wrap section-block" id="about">
+    <section class="section-wrap section-block person-section" id="about" aria-labelledby="personTitle">
       <div class="section-heading reveal">
-        <div><span class="section-index">01 — THE PERSON</span><h2>Curiosity is the <span class="gradient-text">starting point.</span></h2></div>
-        <p>I care about understanding the “why” behind a system — not just making it run.</p>
+        <div>
+          <span class="section-index">01 — THE PERSON</span>
+          <h2 id="personTitle">Engineering <span class="gradient-text">DNA.</span></h2>
+        </div>
+        <p>A way of thinking that connects curiosity, deliberate building, and evidence-based decisions.</p>
       </div>
-      <div class="about-grid">
-        <article class="panel about-panel reveal">
-          <div class="panel-label"><span class="panel-icon icon-cyan">⌘</span><span>ENGINEERING PHILOSOPHY</span></div>
-          <h3>Learn deeply.<br><span class="muted-heading">Build deliberately.</span></h3>
-          <p>My goal is to develop a strong foundation across software and IT systems. I use focused experiments to turn abstract concepts into work I can test, document, explain, and improve.</p>
-          <div class="principle-list">
-            <div><span class="principle-number">A</span><span><b>Understand the problem</b><small>Define constraints before choosing tools.</small></span></div>
-            <div><span class="principle-number">B</span><span><b>Make it work, then make it clear</b><small>Readable design is part of correctness.</small></span></div>
-            <div><span class="principle-number">C</span><span><b>Verify, document, iterate</b><small>Show the evidence behind each conclusion.</small></span></div>
+
+      <div class="engineering-dna">
+        <article class="dna-hero reveal" aria-labelledby="dnaHeroTitle">
+          <div class="dna-hero-top">
+            <span class="dna-system-label"><i aria-hidden="true"></i> ENGINEERING DNA / 001</span>
+            <span class="dna-live"><i aria-hidden="true"></i> PERSONAL PRINCIPLES</span>
+          </div>
+
+          <svg class="dna-constellation" viewBox="0 0 300 270" fill="none" aria-hidden="true">
+            <defs>
+              <linearGradient id="dnaLine" x1="25" y1="18" x2="270" y2="250" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#56def5" stop-opacity=".7"/>
+                <stop offset=".52" stop-color="#6697ff" stop-opacity=".45"/>
+                <stop offset="1" stop-color="#b49aff" stop-opacity=".6"/>
+              </linearGradient>
+              <radialGradient id="dnaNodeGlow">
+                <stop stop-color="#f4fdff"/>
+                <stop offset=".25" stop-color="#56def5"/>
+                <stop offset="1" stop-color="#56def5" stop-opacity="0"/>
+              </radialGradient>
+            </defs>
+            <g stroke="url(#dnaLine)" stroke-width="1">
+              <path d="M42 47H106V91H164V58H239"/>
+              <path d="M106 91V144H72V198H143V225H231"/>
+              <path d="M164 91V143H219V184H260"/>
+              <path d="M143 198H190V162"/>
+              <circle cx="106" cy="91" r="5"/><circle cx="164" cy="91" r="5"/>
+              <circle cx="72" cy="198" r="5"/><circle cx="143" cy="225" r="5"/>
+              <circle cx="219" cy="143" r="5"/><circle cx="239" cy="58" r="5"/>
+            </g>
+            <g fill="url(#dnaNodeGlow)">
+              <circle cx="106" cy="91" r="13"/><circle cx="164" cy="91" r="13"/>
+              <circle cx="72" cy="198" r="13"/><circle cx="219" cy="143" r="13"/>
+            </g>
+            <g stroke="#b7efff" stroke-opacity=".65">
+              <circle cx="106" cy="91" r="2.4"/><circle cx="164" cy="91" r="2.4"/>
+              <circle cx="72" cy="198" r="2.4"/><circle cx="219" cy="143" r="2.4"/>
+            </g>
+          </svg>
+
+          <div class="dna-copy">
+            <p class="dna-eyebrow"><span></span> CURIOSITY → CLARITY</p>
+            <h3 id="dnaHeroTitle">Understand the <span class="gradient-text">why.</span><br>Build for the real world.</h3>
+            <p class="dna-description">I'm interested in what happens beneath the surface — how software, networks, data, and security fit together. I learn by breaking problems down, testing assumptions, and documenting what actually works.</p>
+          </div>
+
+          <div class="dna-operating-tags" aria-label="Engineering operating principles">
+            <div class="dna-tag"><span>MODE</span><strong>LEARN</strong><i aria-hidden="true">01</i></div>
+            <div class="dna-tag"><span>METHOD</span><strong>BUILD</strong><i aria-hidden="true">02</i></div>
+            <div class="dna-tag"><span>STANDARD</span><strong>VERIFY</strong><i aria-hidden="true">03</i></div>
+          </div>
+
+          <div class="dna-hero-footer">
+            <span><i aria-hidden="true"></i> SYSTEM THINKING / EVIDENCE FIRST</span>
+            <span class="dna-footer-code">HC // 001</span>
           </div>
         </article>
-        <article class="panel focus-panel reveal">
-          <div class="panel-label"><span class="panel-icon icon-violet">◈</span><span>CURRENT LEARNING APPROACH</span></div>
-          <div class="focus-row"><span class="focus-index">01</span><div><b>Build fundamentals</b><p>Programming, algorithms, operating systems, networking, and databases.</p></div></div>
-          <div class="focus-row"><span class="focus-index">02</span><div><b>Connect the layers</b><p>Understand how applications, infrastructure, identity, data, and security interact.</p></div></div>
-          <div class="focus-row"><span class="focus-index">03</span><div><b>Publish reproducible work</b><p>Clear READMEs, diagrams, setup steps, tests, and honest limitations.</p></div></div>
-          <div class="panel-foot"><span class="status-dot" aria-hidden="true"></span> Learning in public, one useful commit at a time.</div>
-        </article>
+
+        <div class="dna-principles" aria-label="Engineering principles">
+          <article class="dna-principle dna-understand reveal">
+            <div class="dna-node-top">
+              <span class="dna-node-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none"><circle cx="10.8" cy="10.8" r="6.5"/><path d="m16 16 4.2 4.2M8 10.8h5.6M10.8 8v5.6"/></svg>
+              </span>
+              <span class="dna-node-index">01 / UNDERSTAND</span>
+              <span class="dna-node-tag">DEFINE</span>
+            </div>
+            <h3>Define the problem.</h3>
+            <p>Map constraints, dependencies, and the desired outcome before choosing tools.</p>
+            <div class="dna-node-output"><span>INPUT</span><strong>Clear problem</strong></div>
+          </article>
+
+          <article class="dna-principle dna-engineer reveal">
+            <div class="dna-node-top">
+              <span class="dna-node-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M8.5 7 3.5 12l5 5M15.5 7l5 5-5 5M14 4l-4 16"/></svg>
+              </span>
+              <span class="dna-node-index">02 / ENGINEER</span>
+              <span class="dna-node-tag">BUILD</span>
+            </div>
+            <h3>Build deliberately.</h3>
+            <p>Make it work, then make it readable, maintainable, and repeatable.</p>
+            <div class="dna-node-output"><span>METHOD</span><strong>Clear implementation</strong></div>
+          </article>
+
+          <article class="dna-principle dna-verify reveal">
+            <div class="dna-node-top">
+              <span class="dna-node-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M12 3 19 6v5.2c0 4.7-3 7.8-7 9.8-4-2-7-5.1-7-9.8V6l7-3Z"/><path d="m8.5 12.2 2.3 2.3 4.8-5"/></svg>
+              </span>
+              <span class="dna-node-index">03 / VERIFY</span>
+              <span class="dna-node-tag">PROVE</span>
+            </div>
+            <h3>Prove the result.</h3>
+            <p>Test, document limitations, and improve decisions with observable evidence.</p>
+            <div class="dna-node-output"><span>OUTPUT</span><strong>Verified result</strong></div>
+          </article>
+        </div>
       </div>
     </section>
 
