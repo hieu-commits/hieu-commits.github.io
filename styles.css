@@ -858,11 +858,30 @@ h1 { margin: 25px 0 20px; font-size: clamp(52px, 6.4vw, 88px); line-height: 1.02
   position: absolute;
   top: 1px;
   right: 0;
-  color: #8196b5;
-  font: 8px var(--mono);
-  letter-spacing: .4px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  width: max-content;
+  max-width: none;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+  padding: 5px 7px;
+  border: 1px solid rgba(var(--accent-rgb), .20);
+  border-radius: 7px;
+  color: #9db2cf;
+  background: rgba(4, 10, 21, .76);
+  font: 8px/1 var(--mono);
+  letter-spacing: .25px;
+  line-height: 1;
+  z-index: 2;
 }
-.iteration-step i { color: #556b8b; font-style: normal; }
+.iteration-step i {
+  display: inline-block;
+  color: #627a9d;
+  font-style: normal;
+  white-space: nowrap;
+}
 .iteration-kicker {
   display: flex;
   align-items: center;
@@ -873,7 +892,7 @@ h1 { margin: 25px 0 20px; font-size: clamp(52px, 6.4vw, 88px); line-height: 1.02
   letter-spacing: 1.05px;
 }
 .iteration-kicker span { display: inline-block; width: 5px; height: 5px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 9px rgba(var(--accent-rgb), .66); }
-.iteration-stage h3 { margin: 0 0 9px; color: #edf5ff; font-size: 15px; line-height: 1.43; letter-spacing: -.35px; }
+.iteration-stage h3 { min-height: calc(1.43em * 2); margin: 0 0 9px; color: #edf5ff; font-size: 15px; line-height: 1.43; letter-spacing: -.35px; }
 .iteration-stage p { margin: 0; color: #9aaeca; font-size: 10px; line-height: 1.9; }
 .iteration-output {
   display: flex;
@@ -926,6 +945,7 @@ h1 { margin: 25px 0 20px; font-size: clamp(52px, 6.4vw, 88px); line-height: 1.02
   .iteration-pipeline { grid-template-columns: 1fr; gap: 12px; padding: 13px; border-radius: 22px; }
   .iteration-stage { min-height: 0; padding: 19px 18px 16px; }
   .iteration-stage-head { justify-content: flex-start; margin-bottom: 15px; }
+  .iteration-stage h3 { min-height: 0; }
   .iteration-step { top: 12px; }
   .iteration-output { margin-top: 19px; }
   .iteration-loop { align-items: flex-start; flex-direction: column; gap: 8px; }
