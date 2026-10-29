@@ -130,47 +130,63 @@ h1 { margin: 25px 0 20px; font-size: clamp(52px, 6.4vw, 88px); line-height: 1.02
   border-radius: inherit;
   pointer-events: none;
   opacity: 0;
-  /* Two cyan/white comet traces on the same border, orbiting in opposite directions. */
+  /* Quantum Dual Orbit 2.0: two crisp comet heads, cyan/blue and violet/cyan tails. */
   background:
     conic-gradient(
       from var(--meteor-angle-forward, 0deg),
-      transparent 0deg 318deg,
-      rgba(var(--accent-rgb), .08) 325deg,
-      rgba(var(--accent-rgb), .26) 332deg,
-      rgba(var(--accent-rgb), .76) 338deg,
-      rgba(255, 255, 255, 1) 343deg,
-      rgba(var(--accent-rgb), .95) 347deg,
-      rgba(var(--accent-rgb), .45) 352deg,
-      transparent 357deg 360deg
+      transparent 0deg 308deg,
+      rgba(108, 87, 255, .04) 314deg,
+      rgba(105, 121, 255, .12) 321deg,
+      rgba(67, 171, 255, .27) 329deg,
+      rgba(var(--accent-rgb), .58) 337deg,
+      rgba(var(--accent-rgb), .92) 342deg,
+      rgba(238, 252, 255, .98) 346deg,
+      rgba(255, 255, 255, 1) 349deg,
+      rgba(90, 222, 255, .88) 352deg,
+      rgba(107, 119, 255, .50) 357deg,
+      transparent 360deg
     ),
     conic-gradient(
       from calc(180deg - var(--meteor-angle-reverse, 0deg)),
-      transparent 0deg 318deg,
-      rgba(var(--accent-rgb), .08) 325deg,
-      rgba(var(--accent-rgb), .26) 332deg,
-      rgba(var(--accent-rgb), .76) 338deg,
-      rgba(255, 255, 255, 1) 343deg,
-      rgba(var(--accent-rgb), .95) 347deg,
-      rgba(var(--accent-rgb), .45) 352deg,
-      transparent 357deg 360deg
+      transparent 0deg 306deg,
+      rgba(77, 198, 255, .05) 313deg,
+      rgba(75, 161, 255, .15) 321deg,
+      rgba(95, 121, 255, .30) 330deg,
+      rgba(149, 119, 255, .58) 338deg,
+      rgba(241, 241, 255, .98) 344deg,
+      rgba(255, 255, 255, 1) 348deg,
+      rgba(173, 158, 255, .83) 352deg,
+      rgba(96, 214, 255, .46) 357deg,
+      transparent 360deg
     );
   -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
   /* Make the moving trace visible above the normal 1px card border. */
-  filter: drop-shadow(0 0 3px rgba(var(--accent-rgb), .9))
-          drop-shadow(0 0 8px rgba(var(--accent-rgb), .32));
-  transition: opacity .12s linear;
+  /* A small white core, accent-color bloom, and restrained violet depth. */
+  filter: drop-shadow(0 0 2px rgba(245, 253, 255, .78))
+          drop-shadow(0 0 5px rgba(var(--accent-rgb), .88))
+          drop-shadow(0 0 12px rgba(120, 92, 255, .30));
+  transition: opacity .18s ease;
 }
-/* Cards keep a refined static outline at rest. The electric edge activates only on hover-capable devices. */
+/* Resting cards keep a quiet outline; the dual orbit activates on hover-capable devices. */
 /* Keyboard focus gets a clear, static accent; pointer hover gets the moving electric edge. */
 .expertise-card:focus-within, .project-card:focus-within { border-color: rgba(var(--accent-rgb), .58); box-shadow: inset 0 1px 0 rgba(255,255,255,.04), 0 18px 38px rgba(0,0,0,.20), 0 0 22px rgba(var(--accent-rgb), .07); }
 .expertise-card:focus-within::after, .project-card:focus-within::after { opacity: .85; animation: none; }
 @media (hover: hover) and (pointer: fine) {
-  .expertise-card:hover, .project-card:hover { transform: translateY(-4px); border-color: rgba(var(--accent-rgb), .32); box-shadow: inset 0 1px 0 rgba(255,255,255,.04), 0 20px 44px rgba(0,0,0,.22), 0 0 26px rgba(var(--accent-rgb), .085); }
+  .expertise-card:hover, .project-card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(var(--accent-rgb), .34);
+    box-shadow:
+      inset 0 1px 0 rgba(255,255,255,.045),
+      0 18px 38px rgba(0,0,0,.22),
+      0 0 28px rgba(var(--accent-rgb), .10),
+      0 0 20px rgba(117, 92, 255, .045);
+  }
   .expertise-card:hover::after, .project-card:hover::after {
     opacity: 1;
-    animation: meteorOrbitForward 2s linear infinite, meteorOrbitReverse 2s linear infinite;
+    /* Two trails start half a turn apart and travel in opposite directions. */
+    animation: meteorOrbitForward 3.6s linear infinite, meteorOrbitReverse 3.6s linear infinite;
   }
 }
 @keyframes meteorOrbitForward {
