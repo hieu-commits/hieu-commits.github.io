@@ -966,3 +966,241 @@ h1 { margin: 25px 0 20px; font-size: clamp(52px, 6.4vw, 88px); line-height: 1.02
   .iteration-stage:hover .card-sheen,
   .iteration-stage:hover .card-sheen::after { display: none !important; animation: none !important; }
 }
+
+
+/* ================================================================
+   RESPONSIVE HARDENING v9
+   Desktop: four steps in one row. Tablet/small desktop: two by two.
+   Phone: one clear column. Step labels use a dedicated grid column.
+   ================================================================ */
+.section-wrap,
+.hero-copy,
+.hero-visual,
+.about-grid,
+.expertise-grid,
+.project-grid,
+.section-heading > div,
+.iteration-pipeline,
+.iteration-stage,
+.contact-card {
+  min-width: 0;
+}
+img,
+svg {
+  max-width: 100%;
+}
+.iteration-stage-head {
+  display: grid;
+  grid-template-columns: 46px minmax(0, 1fr);
+  align-items: center;
+  justify-content: initial;
+  gap: 10px;
+  width: 100%;
+  min-width: 0;
+}
+.iteration-icon {
+  flex: 0 0 46px;
+}
+.iteration-step {
+  justify-self: end;
+  min-width: 0;
+  max-width: 100%;
+  width: max-content;
+  margin-left: 0;
+  white-space: nowrap;
+  letter-spacing: 0;
+  padding-inline: 6px;
+}
+.iteration-stage h3,
+.iteration-stage p,
+.iteration-output strong {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.visual-foot {
+  flex-wrap: wrap;
+  row-gap: 6px;
+}
+
+/* Four columns are only used when each card has enough real width. */
+@media (min-width: 1101px) {
+  .iteration-pipeline {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+    padding: 24px;
+  }
+  .iteration-pipeline::before,
+  .iteration-pipeline::after {
+    display: block;
+  }
+}
+
+/* Tablet and compact desktop: intentional 2 × 2 layout, never an accidental wrap. */
+@media (min-width: 601px) and (max-width: 1100px) {
+  .iteration-pipeline {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+    padding: 18px;
+  }
+  .iteration-pipeline::before,
+  .iteration-pipeline::after {
+    display: none;
+  }
+  .iteration-stage {
+    min-height: 270px;
+    padding: 18px 16px 16px;
+  }
+  .iteration-stage-head {
+    margin-bottom: 16px;
+  }
+  .iteration-stage h3 {
+    font-size: 14px;
+  }
+}
+
+/* Phones: one card per row for comfortable reading and touch use. */
+@media (max-width: 600px) {
+  .iteration-pipeline {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 12px;
+    padding: 13px;
+    border-radius: 22px;
+  }
+  .iteration-pipeline::before,
+  .iteration-pipeline::after {
+    display: none;
+  }
+  .iteration-stage {
+    width: 100%;
+    min-height: 0;
+    padding: 19px 18px 16px;
+  }
+  .iteration-stage-head {
+    grid-template-columns: 46px minmax(0, 1fr);
+    gap: 10px;
+    margin-bottom: 15px;
+  }
+  .iteration-stage h3 {
+    min-height: 0;
+    font-size: 15px;
+  }
+  .iteration-stage p {
+    font-size: 11px;
+    line-height: 1.8;
+  }
+  .iteration-step {
+    font-size: 8px;
+    padding: 5px 7px;
+  }
+  .iteration-output {
+    gap: 8px;
+    margin-top: 18px;
+  }
+  .iteration-loop {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .iteration-loop-flow {
+    flex-wrap: wrap;
+    gap: 7px;
+    font-size: 8px;
+  }
+  .visual-foot {
+    left: 13px;
+    right: 13px;
+    font-size: 7px;
+    letter-spacing: .55px;
+    gap: 6px;
+  }
+}
+
+/* Small phones (including 320px-wide screens). */
+@media (max-width: 360px) {
+  .section-wrap {
+    width: calc(100% - 28px);
+  }
+  .iteration-pipeline {
+    padding: 10px;
+    gap: 10px;
+  }
+  .iteration-stage {
+    padding: 16px 14px 14px;
+  }
+  .iteration-stage-head {
+    grid-template-columns: 42px minmax(0, 1fr);
+    gap: 8px;
+  }
+  .iteration-icon {
+    width: 42px;
+    height: 42px;
+    flex-basis: 42px;
+  }
+  .iteration-step {
+    font-size: 7px;
+    padding: 5px 6px;
+  }
+  .hero h1 {
+    font-size: clamp(40px, 11vw, 47px);
+  }
+  .visual-foot {
+    font-size: 6px;
+    letter-spacing: .35px;
+    gap: 5px;
+  }
+}
+
+
+/* The signal-track div is visual decoration, not a grid card. Keep it out of
+   normal grid flow; otherwise it occupies cell #1 and pushes stage 04 to row 2. */
+.iteration-signal-track {
+  position: absolute;
+  z-index: 0;
+  top: 47px;
+  left: 12.5%;
+  right: 12.5%;
+  height: 1px;
+  display: block;
+  pointer-events: none;
+  background: linear-gradient(90deg,
+    rgba(86,222,245,.56), rgba(102,151,255,.45),
+    rgba(180,154,255,.52), rgba(86,223,194,.42));
+  opacity: .62;
+}
+.iteration-signal-track > span {
+  position: absolute;
+  top: -1.5px;
+  left: 0;
+  display: block;
+  width: 16%;
+  height: 4px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, transparent, rgba(101,224,255,.75), #f5fdff 48%, rgba(170,153,255,.72), transparent);
+  filter: blur(.25px) drop-shadow(0 0 5px rgba(85,213,255,.65)) drop-shadow(0 0 10px rgba(125,102,255,.26));
+  opacity: .9;
+  animation: iterationSignalTrackMove 5.2s cubic-bezier(.25,.7,.25,1) infinite;
+}
+.iteration-pipeline::before,
+.iteration-pipeline::after {
+  display: none !important;
+}
+@keyframes iterationSignalTrackMove {
+  0% { left: 0; opacity: 0; }
+  9% { opacity: .95; }
+  84% { opacity: .90; }
+  100% { left: 84%; opacity: 0; }
+}
+@media (min-width: 1101px) {
+  .iteration-signal-track { display: block; }
+}
+@media (max-width: 1100px) {
+  .iteration-signal-track { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .iteration-signal-track > span {
+    animation: none !important;
+    left: 0 !important;
+    opacity: .24;
+  }
+}
