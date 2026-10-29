@@ -1204,3 +1204,29 @@ svg {
     opacity: .24;
   }
 }
+
+
+/* V10 HOTFIX: decorative signal track must never occupy a CSS Grid cell.
+   Without this absolute positioning it becomes implicit grid item #1,
+   leaving only three stages on row one and wrapping STEP 04 below. */
+.iteration-pipeline > .iteration-signal-track {
+  position: absolute !important;
+  inset: 47px 12.5% auto;
+  height: 1px;
+  z-index: 0;
+  display: block;
+  pointer-events: none;
+  grid-column: 1 / -1;
+  grid-row: 1;
+}
+.iteration-pipeline > .iteration-signal-track > span {
+  position: absolute;
+  top: -1.5px;
+  left: 0;
+  display: block;
+}
+@media (max-width: 1100px) {
+  .iteration-pipeline > .iteration-signal-track {
+    display: none;
+  }
+}
