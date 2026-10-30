@@ -1,0 +1,153 @@
+/*
+ * HIEU COMMITS — FOUNDATION / EXPERIENCE / BRAND QUALITY PATCH
+ * Add after the existing styles.css and component stylesheets.
+ * Additive only: does not replace the existing design system.
+ */
+
+/* ------------------------------------------------------------------
+   Phase 03 — Progressive enhancement for scroll reveals
+   Content is visible by default. Motion is enabled only after the
+   enhancement script successfully creates an IntersectionObserver.
+   ------------------------------------------------------------------ */
+.reveal {
+  opacity: 1;
+  transform: none;
+}
+
+html.foundation-motion-ready .reveal:not(.is-visible) {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity .55s ease, transform .55s cubic-bezier(.2,.65,.25,1);
+}
+
+html.foundation-motion-ready .reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Keep anchor destinations clear of the sticky command navigation. */
+html {
+  scroll-padding-top: 108px;
+}
+
+:where(#top, #about, #expertise, #work, #roadmap, #contact) {
+  scroll-margin-top: 108px;
+}
+
+/* More consistent keyboard focus, including custom interactive controls. */
+:where(a, button, input, textarea, select, summary, [tabindex]):focus-visible {
+  outline: 2px solid var(--cyan, #56def5);
+  outline-offset: 4px;
+}
+
+@media (forced-colors: active) {
+  :where(a, button, input, textarea, select, summary, [tabindex]):focus-visible {
+    outline: 2px solid Highlight;
+    outline-offset: 3px;
+  }
+}
+
+/* ------------------------------------------------------------------
+   Phase 01 — Honest project status presentation
+   foundation-quality.js replaces misleading generic project links
+   for cards that are still marked Planned build.
+   ------------------------------------------------------------------ */
+.project-link-pending {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 28px;
+  color: #8194b2;
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1.5;
+  cursor: default;
+}
+
+.project-link-pending::before {
+  content: "";
+  width: 5px;
+  height: 5px;
+  flex: 0 0 5px;
+  border-radius: 50%;
+  background: #e7bd76;
+  box-shadow: 0 0 8px rgba(231, 189, 118, .3);
+}
+
+/* ------------------------------------------------------------------
+   Phase 03 — Readability and responsive guardrails
+   Preserve the existing card layouts; improve small body copy and
+   prevent common flex/grid children from forcing horizontal overflow.
+   ------------------------------------------------------------------ */
+:where(main, .section-wrap, .section-block, .hero, .hero-copy, .hero-visual,
+  .atlas-layout, .atlas-map-panel, .atlas-story-panel,
+  .expertise-grid, .expertise-card, .projects-grid, .project-card,
+  .iteration-pipeline, .iteration-stage, .contact-card) {
+  min-width: 0;
+}
+
+:where(.hero-lead, .hero-context, .atlas-story-step p, .expertise-card p,
+  .project-content p, .iteration-stage p, .contact-card p) {
+  overflow-wrap: break-word;
+}
+
+.expertise-card p {
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.project-content p {
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.project-footer a {
+  min-height: 32px;
+  font-size: 11px;
+}
+
+@media (max-width: 600px) {
+  .expertise-card p,
+  .project-content p {
+    font-size: 12px;
+    line-height: 1.82;
+  }
+
+  .project-footer a,
+  .project-link-pending {
+    min-height: 40px;
+  }
+}
+
+@media (max-width: 360px) {
+  :where(.hero, .section-wrap, .atlas-layout, .expertise-grid, .projects-grid,
+    .iteration-pipeline, .contact-card) {
+    max-width: 100%;
+  }
+
+  .project-content,
+  .project-footer,
+  .project-tags {
+    min-width: 0;
+  }
+}
+
+/* Respect reduced-motion preferences even if a component stylesheet is
+   added later and forgets to include its own reduced-motion override. */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto !important;
+  }
+
+  .reveal,
+  html.foundation-motion-ready .reveal,
+  html.foundation-motion-ready .reveal:not(.is-visible) {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  .project-link-pending {
+    transition: none !important;
+  }
+}
