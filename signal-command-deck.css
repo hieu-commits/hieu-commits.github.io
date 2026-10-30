@@ -1,0 +1,473 @@
+/* =====================================================================
+   SIGNAL COMMAND DECK — Header + Hero integration
+   Scoped additions only. Load AFTER styles.css.
+   Preserves the existing ticker and all sections below the Hero.
+   ===================================================================== */
+
+/* Glass command navigation */
+.topbar.signal-topbar {
+  min-height: 76px;
+  padding: 10px clamp(18px, 4.2vw, 72px);
+  gap: 24px;
+  background: rgba(5, 9, 20, .72);
+  border-bottom-color: rgba(119, 157, 218, .15);
+  -webkit-backdrop-filter: blur(24px) saturate(145%);
+  backdrop-filter: blur(24px) saturate(145%);
+  transition: min-height .28s ease, padding .28s ease, background .28s ease,
+    border-color .28s ease, box-shadow .28s ease;
+}
+.topbar.signal-topbar.is-scrolled {
+  min-height: 66px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  background: rgba(5, 9, 20, .91);
+  border-bottom-color: rgba(86, 222, 245, .20);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, .20);
+}
+.signal-brand { gap: 12px; }
+.signal-brand .brand-mark {
+  position: relative;
+  width: 44px;
+  height: 44px;
+  border-radius: 15px;
+  border-color: rgba(69, 222, 255, .48);
+  background: linear-gradient(145deg, rgba(32, 144, 255, .22), rgba(166, 71, 255, .13));
+  box-shadow: inset 0 0 18px rgba(45, 194, 255, .09), 0 0 24px rgba(38, 153, 235, .08);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+.signal-brand .brand-mark::after {
+  content: "";
+  position: absolute;
+  inset: -4px;
+  border: 1px solid rgba(86, 222, 245, .12);
+  border-radius: 18px;
+  transform: scale(.94);
+  transition: transform .35s ease, border-color .35s ease;
+}
+.signal-brand-copy { display: grid; gap: 2px; line-height: 1.2; }
+.signal-brand-copy strong {
+  color: #eef6ff;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: .035em;
+}
+.signal-brand-copy small {
+  color: #8196b5;
+  font: 8px/1.4 var(--mono, "DM Mono", monospace);
+  letter-spacing: .9px;
+  white-space: nowrap;
+}
+@media (hover: hover) and (pointer: fine) {
+  .signal-brand:hover .brand-mark {
+    transform: translateY(-2px);
+    box-shadow: inset 0 0 20px rgba(45, 194, 255, .13), 0 0 28px rgba(38, 153, 235, .18);
+  }
+  .signal-brand:hover .brand-mark::after {
+    transform: scale(1.04);
+    border-color: rgba(86, 222, 245, .32);
+  }
+}
+.signal-nav-shell {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: auto;
+  padding: 5px 6px;
+  border: 1px solid rgba(115, 154, 213, .15);
+  border-radius: 17px;
+  background: rgba(10, 18, 34, .48);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .025);
+}
+.signal-topbar .nav {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+.signal-topbar .nav a:not(.nav-cta) {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  min-height: 38px;
+  padding: 0 12px;
+  border-radius: 10px;
+  color: #aebbd2;
+  font-size: 10px;
+  font-weight: 750;
+  letter-spacing: .01em;
+  transition: color .2s ease, background .2s ease;
+}
+.signal-topbar .nav a:not(.nav-cta)::after {
+  content: "";
+  position: absolute;
+  left: 13px;
+  right: 13px;
+  bottom: 4px;
+  height: 1px;
+  background: linear-gradient(90deg, var(--cyan, #56def5), var(--blue, #6697ff), var(--violet, #b49aff));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .25s ease;
+}
+.signal-topbar .nav a:not(.nav-cta):hover,
+.signal-topbar .nav a:not(.nav-cta)[aria-current="location"] {
+  color: #f2fbff;
+  background: rgba(62, 157, 215, .075);
+}
+.signal-topbar .nav a:not(.nav-cta):hover::after,
+.signal-topbar .nav a:not(.nav-cta)[aria-current="location"]::after {
+  transform: scaleX(1);
+}
+.signal-topbar .nav .nav-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  min-height: 40px;
+  margin-left: 3px;
+  padding: 0 14px;
+  border: 1px solid rgba(74, 209, 244, .33);
+  border-radius: 12px;
+  background: linear-gradient(110deg, rgba(31, 139, 255, .16), rgba(155, 76, 255, .12));
+  color: #eafaff;
+  font-size: 10px;
+  font-weight: 800;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .05);
+  transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;
+}
+.signal-topbar .nav .nav-cta span { margin-left: 0; color: var(--cyan, #56def5); }
+.signal-topbar .nav .nav-cta:hover {
+  transform: translateY(-1px);
+  border-color: rgba(86, 222, 245, .65);
+  box-shadow: 0 8px 24px rgba(37, 151, 225, .12);
+}
+.signal-topbar .menu-toggle {
+  width: 44px;
+  height: 44px;
+  border: 1px solid rgba(86, 222, 245, .28);
+  border-radius: 13px;
+  background: rgba(12, 25, 43, .78);
+}
+.signal-topbar .menu-toggle span {
+  display: block;
+  width: 17px;
+  height: 1.5px;
+  margin: 5px auto;
+  background: #bfeeff;
+  transition: transform .22s ease, opacity .22s ease;
+}
+.signal-topbar .menu-toggle[aria-expanded="true"] span:first-child { transform: translateY(3.25px) rotate(45deg); }
+.signal-topbar .menu-toggle[aria-expanded="true"] span:last-child { transform: translateY(-3.25px) rotate(-45deg); }
+
+/* HC Core — identity lens */
+.hero.signal-hero {
+  grid-template-columns: minmax(0, .96fr) minmax(0, 1.04fr);
+  gap: clamp(30px, 4.1vw, 68px);
+  align-items: center;
+}
+.signal-hero .hero-copy { max-width: 690px; min-width: 0; }
+.signal-hero .hero-copy h1 { max-width: 650px; font-size: clamp(45px, 5vw, 74px); text-wrap: balance; }
+.signal-hero .hero-lead { max-width: 610px; }
+.signal-hero .hero-context { max-width: 580px; }
+.signal-core-card {
+  --signal-mx: 50%;
+  --signal-my: 42%;
+  --signal-rx: 0deg;
+  --signal-ry: 0deg;
+  position: relative;
+  z-index: 1;
+  min-width: 0;
+  min-height: clamp(440px, 35vw, 490px);
+  overflow: hidden;
+  isolation: isolate;
+  border: 1px solid rgba(79, 153, 230, .27);
+  border-radius: 29px;
+  background:
+    radial-gradient(ellipse at var(--signal-mx) var(--signal-my), rgba(63, 164, 225, .14), transparent 42%),
+    radial-gradient(ellipse at 50% 46%, rgba(34, 84, 176, .17), transparent 57%),
+    linear-gradient(145deg, rgba(11, 23, 49, .96), rgba(8, 12, 28, .94));
+  box-shadow: 0 26px 88px rgba(0, 0, 0, .23), inset 0 1px 0 rgba(255, 255, 255, .045);
+  transform: perspective(1100px) rotateX(var(--signal-rx)) rotateY(var(--signal-ry));
+  transform-style: preserve-3d;
+  transition: transform .18s ease-out, border-color .3s ease, box-shadow .3s ease;
+}
+.signal-core-card::before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  pointer-events: none;
+  opacity: .40;
+  background-image:
+    linear-gradient(rgba(96, 150, 219, .085) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(96, 150, 219, .085) 1px, transparent 1px);
+  background-size: 29px 29px;
+  mask-image: radial-gradient(ellipse at center, #000, transparent 78%);
+}
+.signal-core-card::after {
+  content: "";
+  position: absolute;
+  z-index: 5;
+  inset: -42%;
+  pointer-events: none;
+  opacity: .48;
+  background: linear-gradient(112deg, transparent 42%, rgba(86, 222, 245, .035) 46%, rgba(255, 255, 255, .19) 49%, rgba(86, 222, 245, .10) 51%, rgba(180, 154, 255, .07) 54%, transparent 58%);
+  transform: translate3d(2%, -1%, 0) rotate(-10deg);
+  mix-blend-mode: screen;
+  transition: opacity .3s ease;
+}
+@media (hover: hover) and (pointer: fine) {
+  .signal-core-card:hover {
+    border-color: rgba(86, 222, 245, .48);
+    box-shadow: 0 30px 95px rgba(0, 0, 0, .27), 0 0 34px rgba(67, 168, 231, .09), inset 0 1px 0 rgba(255, 255, 255, .06);
+  }
+  .signal-core-card:hover::after { opacity: .82; }
+}
+.signal-core-topline {
+  position: absolute;
+  z-index: 7;
+  top: 18px;
+  left: 20px;
+  right: 20px;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  color: #7f95b7;
+  font: 8px/1.5 var(--mono, "DM Mono", monospace);
+  letter-spacing: 1px;
+}
+.signal-core-topline span:last-child { color: #9aaccb; }
+.signal-core-stage {
+  position: absolute;
+  inset: 54px 18px 61px;
+  display: grid;
+  place-items: center;
+  perspective: 900px;
+  transform-style: preserve-3d;
+}
+.signal-core-grid-glow {
+  position: absolute;
+  width: min(72%, 340px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(52, 156, 226, .17), rgba(87, 87, 198, .075) 42%, transparent 70%);
+  filter: blur(12px);
+}
+.signal-core-orbit {
+  position: absolute;
+  width: clamp(220px, 26vw, 330px);
+  aspect-ratio: 1;
+  border: 1px solid rgba(86, 222, 245, .20);
+  border-radius: 50%;
+  transform: rotateX(68deg) rotateZ(-24deg);
+  box-shadow: 0 0 32px rgba(51, 176, 224, .08), inset 0 0 22px rgba(86, 222, 245, .035);
+  animation: signalOrbitDrift 24s linear infinite;
+}
+.signal-core-orbit.signal-orbit-two {
+  width: clamp(270px, 31vw, 385px);
+  border-color: rgba(180, 154, 255, .16);
+  transform: rotateX(70deg) rotateZ(32deg);
+  animation-duration: 31s;
+  animation-direction: reverse;
+}
+.signal-core-orbit.signal-orbit-three {
+  width: clamp(195px, 22vw, 280px);
+  border-style: dashed;
+  border-color: rgba(102, 151, 255, .20);
+  transform: rotateX(72deg) rotateZ(74deg);
+  animation-duration: 39s;
+}
+@keyframes signalOrbitDrift { to { rotate: 0 0 1 360deg; } }
+.signal-core-sphere {
+  position: relative;
+  z-index: 3;
+  display: grid;
+  place-items: center;
+  width: clamp(142px, 15vw, 184px);
+  aspect-ratio: 1;
+  border: 1px solid rgba(114, 224, 255, .58);
+  border-radius: 34%;
+  background:
+    radial-gradient(circle at 31% 25%, rgba(255, 255, 255, .30), transparent 15%),
+    radial-gradient(circle at 35% 32%, rgba(86, 222, 245, .30), transparent 37%),
+    radial-gradient(circle at 68% 76%, rgba(180, 154, 255, .25), transparent 39%),
+    linear-gradient(145deg, rgba(28, 80, 114, .78), rgba(15, 27, 59, .94) 58%, rgba(48, 29, 77, .84));
+  box-shadow: 0 0 0 9px rgba(86, 222, 245, .035), 0 0 0 24px rgba(102, 151, 255, .025), 0 0 64px rgba(50, 174, 231, .17), inset 0 1px 1px rgba(255, 255, 255, .35), inset -16px -20px 35px rgba(5, 10, 26, .46);
+  backdrop-filter: blur(10px);
+  transform: translateZ(36px) rotate(-7deg);
+}
+.signal-core-sphere::before {
+  content: "";
+  position: absolute;
+  inset: 11px;
+  border: 1px solid rgba(199, 245, 255, .18);
+  border-radius: 29%;
+  box-shadow: inset 0 0 20px rgba(86, 222, 245, .07);
+}
+.signal-core-monogram {
+  position: relative;
+  color: #effbff;
+  font-size: clamp(39px, 4vw, 52px);
+  font-weight: 800;
+  letter-spacing: -.1em;
+  text-shadow: 0 0 23px rgba(86, 222, 245, .5);
+}
+.signal-core-monogram span { color: var(--cyan, #56def5); }
+.signal-core-caption {
+  position: absolute;
+  z-index: 4;
+  top: calc(50% + 121px);
+  left: 50%;
+  display: grid;
+  gap: 4px;
+  text-align: center;
+  white-space: nowrap;
+  transform: translateX(-50%);
+}
+.signal-core-caption strong { color: #eef8ff; font: 700 10px var(--mono, "DM Mono", monospace); letter-spacing: 1.7px; }
+.signal-core-caption small { color: #7f9ab9; font: 8px var(--mono, "DM Mono", monospace); letter-spacing: 1px; }
+.signal-core-satellite {
+  position: absolute;
+  z-index: 4;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 11px;
+  border: 1px solid rgba(111, 168, 221, .21);
+  border-radius: 12px;
+  background: rgba(7, 17, 34, .78);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 10px 26px rgba(0, 0, 0, .16), inset 0 1px 0 rgba(255, 255, 255, .035);
+  color: #b8cce6;
+  font: 8px var(--mono, "DM Mono", monospace);
+  letter-spacing: .75px;
+  white-space: nowrap;
+}
+.signal-core-satellite i { width: 6px; height: 6px; flex: 0 0 auto; border-radius: 50%; background: var(--sat-color, var(--cyan, #56def5)); box-shadow: 0 0 10px var(--sat-color, var(--cyan, #56def5)); }
+.signal-sat-software { top: 21%; left: 6%; --sat-color: #56def5; }
+.signal-sat-systems { top: 21%; right: 5%; --sat-color: #6697ff; }
+.signal-sat-security { bottom: 18%; left: 8%; --sat-color: #b49aff; }
+.signal-sat-data { right: 7%; bottom: 18%; --sat-color: #56dfc2; }
+.signal-core-bottom {
+  position: absolute;
+  z-index: 7;
+  left: 20px;
+  right: 20px;
+  bottom: 17px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(110, 166, 215, .16);
+  color: #718baa;
+  font: 8px var(--mono, "DM Mono", monospace);
+  letter-spacing: .75px;
+}
+.signal-core-bottom b { color: #a9bfdc; font-weight: 500; }
+.signal-core-live { display: inline-flex; align-items: center; gap: 7px; }
+.signal-core-live i { width: 5px; height: 5px; border-radius: 50%; background: #77e9c5; box-shadow: 0 0 9px rgba(119, 233, 197, .6); }
+
+/* Tablet / compact desktop */
+@media (max-width: 980px) {
+  .hero.signal-hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 32px;
+    min-height: 0;
+    padding-top: 52px;
+    padding-bottom: 76px;
+  }
+  .signal-hero .hero-copy { max-width: 760px; }
+  .signal-core-card { width: min(100%, 720px); min-height: 475px; margin-inline: auto; }
+  .signal-core-orbit { width: 300px; }
+  .signal-core-orbit.signal-orbit-two { width: 354px; }
+  .signal-core-orbit.signal-orbit-three { width: 255px; }
+  .signal-core-sphere { width: 176px; }
+}
+
+/* Tablet navigation: keep the menu usable before it becomes cramped. */
+@media (max-width: 900px) {
+  .topbar.signal-topbar { min-height: 70px; padding-inline: 22px; }
+  .signal-nav-shell { display: contents; }
+  .signal-topbar .menu-toggle { display: flex; flex-direction: column; justify-content: center; gap: 5px; flex: 0 0 44px; cursor: pointer; }
+  .signal-topbar .nav {
+    position: absolute;
+    top: calc(100% + 9px);
+    left: 18px;
+    right: 18px;
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 3px;
+    padding: 10px;
+    border: 1px solid var(--border-strong, rgba(105, 157, 232, .3));
+    border-radius: 17px;
+    background: rgba(7, 13, 28, .97);
+    box-shadow: 0 18px 45px rgba(0, 0, 0, .38);
+    -webkit-backdrop-filter: blur(22px);
+    backdrop-filter: blur(22px);
+  }
+  .signal-topbar .nav.is-open { display: flex; }
+  .signal-topbar .nav a:not(.nav-cta) { min-height: 46px; padding: 0 14px; font-size: 12px; }
+  .signal-topbar .nav a:not(.nav-cta)::after { left: 14px; right: auto; width: 38px; bottom: 6px; }
+  .signal-topbar .nav .nav-cta { justify-content: space-between; min-height: 46px; margin: 4px 0 0; padding-inline: 14px; }
+}
+
+@media (max-width: 600px) {
+  .topbar.signal-topbar { min-height: 66px; padding: 8px 16px; }
+  .signal-brand { gap: 10px; }
+  .signal-brand .brand-mark { width: 40px; height: 40px; border-radius: 13px; }
+  .signal-brand-copy strong { font-size: 12px; }
+  .signal-brand-copy small { font-size: 7px; letter-spacing: .62px; }
+  .signal-topbar .menu-toggle { width: 42px; height: 42px; flex-basis: 42px; }
+  .signal-topbar .nav { left: 14px; right: 14px; }
+  .hero.signal-hero { gap: 27px; padding-top: 38px; padding-bottom: 70px; }
+  .signal-hero .hero-copy h1 { font-size: clamp(42px, 10.8vw, 58px); margin: 22px 0 16px; line-height: 1.02; }
+  .signal-core-card { min-height: 410px; border-radius: 23px; }
+  .signal-core-topline { top: 15px; left: 15px; right: 15px; font-size: 7px; }
+  .signal-core-stage { inset: 46px 8px 55px; }
+  .signal-core-sphere { width: 142px; }
+  .signal-core-monogram { font-size: 42px; }
+  .signal-core-orbit { width: 224px; }
+  .signal-core-orbit.signal-orbit-two { width: 272px; }
+  .signal-core-orbit.signal-orbit-three { width: 190px; }
+  .signal-core-caption { top: calc(50% + 108px); }
+  .signal-core-caption strong { font-size: 9px; }
+  .signal-core-caption small { font-size: 7px; }
+  .signal-core-satellite { gap: 6px; padding: 7px 8px; font-size: 7px; letter-spacing: .45px; }
+  .signal-sat-software { top: 16%; left: 2%; }
+  .signal-sat-systems { top: 16%; right: 2%; }
+  .signal-sat-security { bottom: 13%; left: 3%; }
+  .signal-sat-data { right: 3%; bottom: 13%; }
+  .signal-core-bottom { left: 14px; right: 14px; bottom: 13px; font-size: 7px; }
+  .signal-core-bottom b { font-size: 6px; letter-spacing: .3px; }
+}
+
+@media (max-width: 380px) {
+  .signal-brand-copy small { display: none; }
+  .signal-core-card { min-height: 390px; }
+  .signal-core-sphere { width: 126px; }
+  .signal-core-orbit { width: 205px; }
+  .signal-core-orbit.signal-orbit-two { width: 245px; }
+  .signal-core-orbit.signal-orbit-three { width: 176px; }
+  .signal-core-satellite { gap: 5px; padding: 6px 7px; font-size: 6px; }
+  .signal-sat-software { left: 1%; }
+  .signal-sat-systems { right: 1%; }
+  .signal-sat-security { left: 1%; }
+  .signal-sat-data { right: 1%; }
+  .signal-core-bottom { font-size: 6px; letter-spacing: .35px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .topbar.signal-topbar,
+  .signal-brand .brand-mark,
+  .signal-brand .brand-mark::after,
+  .signal-topbar .nav a,
+  .signal-topbar .nav .nav-cta,
+  .signal-core-card,
+  .signal-core-card::after { transition: none !important; }
+  .signal-core-orbit { animation: none !important; }
+  .signal-core-card::after { opacity: .24; }
+}

@@ -25,6 +25,8 @@
   <script defer src="thinking-atlas.js?v=20261029-thinking-atlas-v1"></script>
   <link rel="stylesheet" href="liquid-data-bubbles.css?v=20261030-liquid-data-bubbles-v1">
   <script defer src="liquid-data-bubbles.js?v=20261030-liquid-data-bubbles-v1"></script>
+  <link rel="stylesheet" href="signal-command-deck.css?v=20261030-signal-command-deck-v1">
+  <script defer src="signal-command-deck.js?v=20261030-signal-command-deck-v1"></script>
 </head>
 
 <body>
@@ -33,29 +35,40 @@
   <div class="ambient ambient-two" aria-hidden="true"></div>
   <div class="page-grid" aria-hidden="true"></div>
 
-  <header class="topbar">
-    <a class="brand" href="#top" aria-label="Hieu portfolio home">
+  <!-- Replace the existing <header class="topbar">...</header> with this block. -->
+  <header class="topbar signal-topbar" id="siteTopbar">
+    <a class="brand signal-brand" href="#top" aria-label="Hieu portfolio home">
       <span class="brand-mark">HC<span>.</span></span>
-      <span class="brand-label">hieu-commits<span> / portfolio</span></span>
+      <span class="signal-brand-copy">
+        <strong>HIEU COMMITS</strong>
+        <small>SOFTWARE · SYSTEMS · SECURITY</small>
+      </span>
     </a>
-    <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false"
-      aria-controls="siteNav">
+
+    <button class="menu-toggle signal-menu-toggle" id="menuToggle" type="button" aria-label="Toggle navigation"
+      aria-expanded="false" aria-controls="siteNav">
       <span></span><span></span>
     </button>
-    <nav class="nav" id="siteNav" aria-label="Main navigation">
-      <a href="#about">Profile</a>
-      <a href="#expertise">Capabilities</a>
-      <a href="#work">Project blueprints</a>
-      <a href="#roadmap">Roadmap</a>
-      <a class="nav-cta" href="#contact">Let's connect <span aria-hidden="true">↗</span></a>
-    </nav>
+
+    <div class="signal-nav-shell">
+      <nav class="nav signal-nav" id="siteNav" aria-label="Main navigation">
+        <a href="#about" aria-current="location">Profile</a>
+        <a href="#expertise">Capabilities</a>
+        <a href="#work">Project blueprints</a>
+        <a href="#roadmap">Roadmap</a>
+        <a class="nav-cta" href="#contact">Let's connect <span aria-hidden="true">↗</span></a>
+      </nav>
+    </div>
   </header>
 
   <main id="main">
-    <section class="hero section-wrap" id="top" aria-labelledby="heroTitle">
-      <div class="hero-copy reveal">
+    <!-- Replace only the current <section class="hero ...">...</section> with this block.
+     Keep the existing ticker section immediately after it unchanged. -->
+    <section class="hero section-wrap signal-hero" id="top" aria-labelledby="heroTitle">
+      <div class="hero-copy reveal signal-hero-copy">
         <div class="eyebrow"><span class="status-dot" aria-hidden="true"></span> SOFTWARE · SYSTEMS · SECURITY</div>
         <h1 id="heroTitle">Build systems<br>that <span class="gradient-text">make sense.</span></h1>
+
         <p class="hero-lead">Hi, I'm <strong>Huỳnh Nhật Hiếu (Hieu)</strong> — a Software Engineering &amp; Computer
           Science student at <a class="institution-link" href="https://hcmus.edu.vn/" target="_blank"
             rel="noopener noreferrer">the University of Science, Vietnam National University Ho Chi Minh City
@@ -65,27 +78,55 @@
         <p class="hero-context">I explore how software, networks, security, and data work together to solve real
           problems.</p>
         <p class="hero-subline">Curious by default. Intentional by design. <span>Evidence over claims.</span></p>
+
         <div class="hero-actions">
           <a class="button button-primary" href="#work">Explore the work <span aria-hidden="true">↘</span></a>
           <a class="button button-ghost" href="https://github.com/hieu-commits" target="_blank"
             rel="noopener noreferrer">GitHub profile <span aria-hidden="true">↗</span></a>
         </div>
-        <div class="hero-signature"><span class="signature-line"></span><span>LEARN / BUILD / VERIFY / IMPROVE</span>
+
+        <div class="hero-signature">
+          <span class="signature-line"></span>
+          <span>LEARN / BUILD / VERIFY / IMPROVE</span>
         </div>
       </div>
 
-      <div class="hero-visual reveal"
-        aria-label="Conceptual view of software, infrastructure, security, data, and connected systems" role="img">
-        <div class="visual-topline"><span>SYSTEM MAP / 001</span><span class="visual-label">A CONNECTED VIEW</span>
+      <div class="hero-visual signal-core-card reveal" id="signalCoreCard" role="img"
+        aria-label="Hieu Commits identity core connected to software, systems, security and data">
+        <div class="signal-core-topline" aria-hidden="true">
+          <span>HC / CORE 001</span>
+          <span>ENGINEERING IDENTITY</span>
         </div>
-        <img class="hero-art" src="assets/hero-systems.svg"
-          alt="Abstract systems diagram connecting software, networking, security, data, cloud, and IoT">
-        <div class="visual-caption"><span class="caption-mark">HC/</span><span><b>Systems thinking</b><small>Understand
-              the layers. Trace the signals.</small></span></div>
-        <div class="visual-foot"><span>SOFTWARE</span><i></i><span>INFRASTRUCTURE</span><i></i><span>INTELLIGENCE</span>
+
+        <div class="signal-core-stage" aria-hidden="true">
+          <div class="signal-core-grid-glow"></div>
+          <div class="signal-core-orbit signal-orbit-one"></div>
+          <div class="signal-core-orbit signal-orbit-two"></div>
+          <div class="signal-core-orbit signal-orbit-three"></div>
+          <div class="signal-core-sphere">
+            <span class="signal-core-monogram">HC<span>.</span></span>
+          </div>
+          <div class="signal-core-caption">
+            <strong>HIEU COMMITS</strong>
+            <small>LEARN · BUILD · VERIFY</small>
+          </div>
+        </div>
+
+        <span class="signal-core-satellite signal-sat-software" aria-hidden="true"><i></i>SOFTWARE</span>
+        <span class="signal-core-satellite signal-sat-systems" aria-hidden="true"><i></i>SYSTEMS</span>
+        <span class="signal-core-satellite signal-sat-security" aria-hidden="true"><i></i>SECURITY</span>
+        <span class="signal-core-satellite signal-sat-data" aria-hidden="true"><i></i>DATA / AI</span>
+
+        <div class="signal-core-bottom" aria-hidden="true">
+          <span class="signal-core-live"><i></i> SYSTEMS THINKING</span>
+          <b>UNDERSTAND THE LAYERS · TRACE THE SIGNALS</b>
         </div>
       </div>
-      <div class="hero-bottom-line"><span>01 / ENGINEERING MINDSET</span><span>LESS NOISE. MORE SIGNAL.</span></div>
+
+      <div class="hero-bottom-line">
+        <span>01 / ENGINEERING MINDSET</span>
+        <span>LESS NOISE. MORE SIGNAL.</span>
+      </div>
     </section>
 
     <!-- Focus ticker: placed directly beneath the Hero bottom line and above 01 — THE PERSON. -->
