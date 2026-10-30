@@ -1,0 +1,127 @@
+/* Liquid Data Bubbles — additive footer effect for Hieu Commits portfolio.
+   Scoped to .footer so it does not alter the page's existing cards or sections. */
+.footer.liquid-bubbles-ready {
+  position: relative;
+  isolation: isolate;
+  overflow: visible;
+}
+
+.footer.liquid-bubbles-ready > .liquid-bubbles-layer {
+  position: absolute;
+  z-index: 0;
+  top: -56px;
+  inset-inline: 0;
+  height: 200px;
+  overflow: hidden;
+  pointer-events: none;
+  user-select: none;
+  contain: layout style;
+  -webkit-mask-image: linear-gradient(to top, #000 0%, #000 46%, rgba(0,0,0,.72) 72%, transparent 100%);
+  mask-image: linear-gradient(to top, #000 0%, #000 46%, rgba(0,0,0,.72) 72%, transparent 100%);
+}
+
+.footer.liquid-bubbles-ready > :not(.liquid-bubbles-layer) {
+  position: relative;
+  z-index: 1;
+}
+
+.liquid-bubbles-layer .liquid-bubble {
+  --bubble-size: 9px;
+  --bubble-drift: 14px;
+  --bubble-rise-y: -168px;
+  --bubble-duration: 13s;
+  --bubble-delay: -3s;
+  --bubble-rest-y: -46px;
+  position: absolute;
+  left: var(--bubble-left, 50%);
+  bottom: -5px;
+  display: block;
+  width: var(--bubble-size);
+  height: var(--bubble-size);
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  box-shadow: none;
+  opacity: 0;
+  transform: translate3d(0, 0, 0) scale(.62);
+  animation: liquidBubbleRise var(--bubble-duration) linear var(--bubble-delay) infinite both;
+  animation-play-state: paused;
+  will-change: transform, opacity;
+}
+
+.liquid-bubbles-layer .liquid-bubble::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 1px solid rgba(119, 225, 247, .72);
+  border-radius: inherit;
+  background: radial-gradient(circle at 28% 22%, rgba(255,255,255,.96) 0, rgba(225,250,255,.58) 4%, rgba(112,222,248,.19) 16%, rgba(99,155,241,.07) 45%, rgba(163,136,255,.14) 70%, rgba(67,191,225,.09) 100%);
+  box-shadow: inset -3px -4px 9px rgba(91,160,239,.12), inset 2px 2px 6px rgba(255,255,255,.12), 0 0 9px rgba(86,214,246,.16);
+}
+
+.liquid-bubbles-layer .liquid-bubble::after {
+  content: "";
+  position: absolute;
+  left: 21%;
+  top: 16%;
+  width: 25%;
+  height: 13%;
+  border-radius: 50%;
+  background: rgba(255,255,255,.9);
+  filter: blur(.5px);
+  transform: rotate(-34deg);
+  box-shadow: 0 0 5px rgba(188,245,255,.5);
+}
+
+.liquid-bubbles-layer .liquid-bubble.is-ring::before {
+  border-color: rgba(184,157,255,.7);
+  background: radial-gradient(circle at 27% 22%, rgba(255,255,255,.92), rgba(193,173,255,.48) 6%, rgba(145,119,238,.16) 23%, rgba(119,117,241,.06) 57%, rgba(94,197,255,.09) 100%);
+  box-shadow: inset -2px -3px 8px rgba(171,139,255,.14), 0 0 10px rgba(162,130,255,.16);
+}
+
+.footer.liquid-bubbles-ready .liquid-bubbles-layer.is-active .liquid-bubble {
+  animation-play-state: running;
+}
+
+@keyframes liquidBubbleRise {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 0, 0) scale(.58);
+  }
+  12% { opacity: var(--bubble-opacity, .48); }
+  36% {
+    opacity: var(--bubble-opacity, .48);
+    transform: translate3d(calc(var(--bubble-drift) * -.24), calc(var(--bubble-rise-y) * .34), 0) scale(.8);
+  }
+  73% {
+    opacity: calc(var(--bubble-opacity, .48) * .72);
+    transform: translate3d(calc(var(--bubble-drift) * .62), calc(var(--bubble-rise-y) * .76), 0) scale(1.03);
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(var(--bubble-drift), var(--bubble-rise-y), 0) scale(1.12);
+  }
+}
+
+@media (max-width: 760px) {
+  .footer.liquid-bubbles-ready > .liquid-bubbles-layer {
+    top: -42px;
+    height: 160px;
+  }
+  .liquid-bubbles-layer .liquid-bubble:nth-child(n + 9) {
+    display: none;
+  }
+  .liquid-bubbles-layer .liquid-bubble {
+    box-shadow: inset -2px -3px 6px rgba(107,166,255,.10), inset 1px 1px 3px rgba(255,255,255,.10), 0 0 7px rgba(69,185,255,.10);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .footer.liquid-bubbles-ready > .liquid-bubbles-layer .liquid-bubble {
+    animation: none !important;
+    animation-play-state: paused !important;
+    opacity: .15;
+    transform: translate3d(0, var(--bubble-rest-y), 0) scale(.9);
+    will-change: auto;
+  }
+}
