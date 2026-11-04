@@ -1,0 +1,7 @@
+.signal-core-card{overflow:visible!important}
+.lanyard-canvas{position:absolute;z-index:8;inset:-5% -3% -8%;width:106%;height:113%;display:block;touch-action:pan-y;cursor:grab;outline:none}
+.lanyard-canvas:active{cursor:grabbing}
+.lanyard-hint{position:absolute;z-index:9;left:50%;bottom:17px;transform:translateX(-50%);padding:8px 12px;border:1px solid rgba(116,190,235,.2);border-radius:999px;background:rgba(5,12,28,.72);color:#9db8d8;font:8px var(--mono);letter-spacing:1px;white-space:nowrap;pointer-events:none;backdrop-filter:blur(12px)}
+.lanyard-hint span{color:#56def5;padding:0 5px}
+@media(max-width:600px){.lanyard-canvas{inset:-3% -5% -6%;width:110%;height:109%}.lanyard-hint{bottom:13px;font-size:7px}}
+@media(prefers-reduced-motion:reduce){.lanyard-canvas{cursor:pointer}}
