@@ -61,7 +61,7 @@
   <link rel="stylesheet" href="liquid-data-bubbles.css?v=20261030-liquid-data-bubbles-v1">
   <script defer src="liquid-data-bubbles.js?v=20261030-liquid-data-bubbles-v1"></script>
   <link rel="stylesheet" href="signal-command-deck.css?v=20261030-signal-command-deck-v1">
-<link rel="stylesheet" href="hanging-id-card.css?v=20261103-id-card-v1">
+<link rel="stylesheet" href="hanging-id-card.css?v=20261104-draggable-id-v2">
   <script defer src="signal-command-deck.js?v=20261030-signal-command-deck-v1"></script>
    <!-- Add these after the existing site/component styles and deferred scripts. -->
   <link rel="stylesheet" href="foundation-quality.css?v=20261030-foundation-v1">
@@ -100,6 +100,18 @@
     </div>
   </header>
 
+  <aside class="draggable-id" id="draggableId" aria-label="Draggable Hieu Commits identity card">
+    <span class="draggable-id-cord" aria-hidden="true"></span>
+    <button class="draggable-id-card" id="draggableIdHandle" type="button" aria-label="Hold and drag the identity card">
+      <span class="draggable-id-hole" aria-hidden="true"></span>
+      <span class="draggable-id-brand"><b>HC<span>.</span></b><small>HIEU COMMITS<br>PERSONAL PROFILE</small></span>
+      <span class="draggable-id-photo"><span>YOUR PHOTO</span></span>
+      <span class="draggable-id-name">HUỲNH NHẬT HIẾU</span>
+      <span class="draggable-id-role">SOFTWARE · SYSTEMS · SECURITY</span>
+      <span class="draggable-id-footer"><i></i><small>LEARN / BUILD / VERIFY</small></span>
+    </button>
+  </aside>
+
   <main id="main">
     <!-- Replace only the current <section class="hero ...">...</section> with this block.
      Keep the existing ticker section immediately after it unchanged. -->
@@ -130,47 +142,16 @@
         </div>
       </div>
 
-      <div class="hero-visual signal-id-stage reveal" id="signalCoreCard"
-        role="img" aria-label="Hieu Commits personal portfolio identity card hanging from a lanyard">
-        <div class="id-stage-topline" aria-hidden="true">
-          <span>HC / IDENTITY 001</span><span>PERSONAL PORTFOLIO</span>
+      <div class="hero-visual signal-core-card reveal" id="signalCoreCard" role="img"
+        aria-label="Hieu Commits identity core connected to software, systems, security and data">
+        <div class="signal-core-topline" aria-hidden="true"><span>HC / CORE 001</span><span>ENGINEERING IDENTITY</span></div>
+        <div class="signal-core-stage" aria-hidden="true">
+          <div class="signal-core-grid-glow"></div><div class="signal-core-orbit signal-orbit-one"></div><div class="signal-core-orbit signal-orbit-two"></div><div class="signal-core-orbit signal-orbit-three"></div>
+          <div class="signal-core-sphere"><span class="signal-core-monogram">HC<span>.</span></span></div>
+          <div class="signal-core-caption"><strong>HIEU COMMITS</strong><small>LEARN · BUILD · VERIFY</small></div>
         </div>
-        <div class="id-hanger" aria-hidden="true">
-          <div class="id-lanyard">
-            <span>HIEU COMMITS</span><b>HC.</b><span>SOFTWARE · SYSTEMS</span>
-          </div>
-          <div class="id-strap-fold"></div>
-          <div class="id-metal-clip"><i></i><b></b></div>
-          <div class="id-card-shell">
-            <div class="id-card-gloss"></div>
-            <div class="id-card-head">
-              <span class="id-brand-mark">HC<span>.</span></span>
-              <span class="id-brand-copy"><b>HIEU COMMITS</b><small>ENGINEERING PROFILE</small></span>
-              <span class="id-chip">001</span>
-            </div>
-            <div class="id-card-rule"></div>
-            <div class="id-profile-row">
-              <div class="id-avatar"><span>H</span><i></i></div>
-              <div class="id-person">
-                <small>IDENTITY / 001</small>
-                <strong>HUỲNH NHẬT<br>HIẾU</strong>
-                <span>SOFTWARE ENGINEERING</span>
-              </div>
-            </div>
-            <div class="id-card-details">
-              <div><small>INSTITUTION</small><b>HCMUS · VNUHCM</b></div>
-              <div><small>FOCUS AREAS</small><b>SOFTWARE / NETWORKS / SECURITY</b></div>
-            </div>
-            <div class="id-card-bottom">
-              <div class="id-card-code" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
-              <div class="id-card-serial"><b>HC—2026</b><small>LEARN · BUILD · VERIFY</small></div>
-            </div>
-            <span class="id-card-corner" aria-hidden="true"></span>
-          </div>
-        </div>
-        <div class="id-stage-caption" aria-hidden="true">
-          <span class="id-live-dot"></span><span>BUILD WITH INTENT</span><i></i><span>VERIFY WITH EVIDENCE</span>
-        </div>
+        <span class="signal-core-satellite signal-sat-software" aria-hidden="true"><i></i>SOFTWARE</span><span class="signal-core-satellite signal-sat-systems" aria-hidden="true"><i></i>SYSTEMS</span><span class="signal-core-satellite signal-sat-security" aria-hidden="true"><i></i>SECURITY</span><span class="signal-core-satellite signal-sat-data" aria-hidden="true"><i></i>DATA / AI</span>
+        <div class="signal-core-bottom" aria-hidden="true"><span class="signal-core-live"><i></i> SYSTEMS THINKING</span><b>UNDERSTAND THE LAYERS · TRACE THE SIGNALS</b></div>
       </div>
 
       <div class="hero-bottom-line">
@@ -737,6 +718,7 @@
     <p>Learn deeply. Build deliberately. Verify everything.</p>
     <div class="footer-right"><span>© <span id="year"></span> Hieu</span><a href="#top">Back to top ↑</a></div>
   </footer>
+  <script defer src="draggable-id.js?v=20261104-drag-v1"></script>
 </body>
 
 </html>
