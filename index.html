@@ -65,7 +65,7 @@
   <script defer src="signal-command-deck.js?v=20261030-signal-command-deck-v1"></script>
    <!-- Add these after the existing site/component styles and deferred scripts. -->
   <link rel="stylesheet" href="foundation-quality.css?v=20261030-foundation-v1">
-  <script defer src="foundation-quality.js?v=20261030-foundation-v1"></script>
+  <script defer src="foundation-quality.js?v=20261030-foundation-v1"></script>\n  <link rel="stylesheet" href="lanyard-3d.css?v=20261104-lanyard-v1">\n  <script type="module" src="lanyard-3d.js?v=20261104-lanyard-v1"></script>
 </head>
 
 <body>
@@ -100,18 +100,6 @@
     </div>
   </header>
 
-  <aside class="draggable-id" id="draggableId" aria-label="Draggable Hieu Commits identity card">
-    <span class="draggable-id-cord" aria-hidden="true"></span>
-    <button class="draggable-id-card" id="draggableIdHandle" type="button" aria-label="Hold and drag the identity card">
-      <span class="draggable-id-hole" aria-hidden="true"></span>
-      <span class="draggable-id-brand"><b>HC<span>.</span></b><small>HIEU COMMITS<br>PERSONAL PROFILE</small></span>
-      <span class="draggable-id-photo"><span>YOUR PHOTO</span></span>
-      <span class="draggable-id-name">HUỲNH NHẬT HIẾU</span>
-      <span class="draggable-id-role">SOFTWARE · SYSTEMS · SECURITY</span>
-      <span class="draggable-id-footer"><i></i><small>LEARN / BUILD / VERIFY</small></span>
-    </button>
-  </aside>
-
   <main id="main">
     <!-- Replace only the current <section class="hero ...">...</section> with this block.
      Keep the existing ticker section immediately after it unchanged. -->
@@ -142,9 +130,9 @@
         </div>
       </div>
 
-      <div class="hero-visual signal-core-card reveal" id="signalCoreCard" role="img"
+      <div class="hero-visual signal-core-card reveal" id="signalCoreCard" role="group"
         aria-label="Hieu Commits identity core connected to software, systems, security and data">
-        <div class="signal-core-topline" aria-hidden="true"><span>HC / CORE 001</span><span>ENGINEERING IDENTITY</span></div>
+        <canvas class="lanyard-canvas" id="lanyardCanvas" aria-label="Interactive three-dimensional Hieu Commits identity badge. Drag to swing, click to flip." role="img"></canvas>\n        <div class="lanyard-hint" id="lanyardHint">DRAG TO SWING <span>·</span> CLICK TO FLIP</div>\n        <div class="signal-core-topline" aria-hidden="true"><span>HC / CORE 001</span><span>ENGINEERING IDENTITY</span></div>
         <div class="signal-core-stage" aria-hidden="true">
           <div class="signal-core-grid-glow"></div><div class="signal-core-orbit signal-orbit-one"></div><div class="signal-core-orbit signal-orbit-two"></div><div class="signal-core-orbit signal-orbit-three"></div>
           <div class="signal-core-sphere"><span class="signal-core-monogram">HC<span>.</span></span></div>
