@@ -30,7 +30,7 @@ import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.160.1/build/three.m
  const badge=new THREE.Group();root.add(badge);
  const body=new THREE.Mesh(geo,cardMat);body.position.z=-depth/2;badge.add(body);
  let texture;\n function artwork(back=false){
-  const c=document.createElement('canvas');c.width=900;c.height=1320;const x=c.getContext('2d');
+  let targetTexture;\n  const c=document.createElement('canvas');c.width=900;c.height=1320;const x=c.getContext('2d');
   const g=x.createLinearGradient(0,0,900,1320);g.addColorStop(0,back?'#071321':'#0b1b30');g.addColorStop(.55,back?'#10243b':'#123653');g.addColorStop(1,'#07111f');x.fillStyle=g;x.fillRect(0,0,900,1320);
   x.strokeStyle='rgba(119,213,244,.82)';x.lineWidth=5;x.strokeRect(28,28,844,1264);
   x.fillStyle='#74dff5';x.font='600 30px monospace';x.fillText(back?'HIEU COMMITS / PROFILE':'HCMUS  /  STUDENT IDENTITY',66,92);
@@ -49,7 +49,7 @@ import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.160.1/build/three.m
   }else{
    x.fillStyle='#102c46';x.fillRect(66,164,768,735);
    x.strokeStyle='rgba(116,223,245,.5)';x.lineWidth=3;x.strokeRect(66,164,768,735);
-   const portrait=new Image();portrait.onload=()=>{const scale=Math.min(700/portrait.width,680/portrait.height);const pw=portrait.width*scale,ph=portrait.height*scale;x.fillStyle='#dce8f2';x.fillRect(100,190,700,680);x.drawImage(portrait,450-pw/2,530-ph/2,pw,ph);texture.needsUpdate=true};portrait.onerror=()=>{};portrait.src='assets/id-portrait.webp';
+   const portrait=new Image();portrait.onload=()=>{const scale=Math.min(700/portrait.width,680/portrait.height);const pw=portrait.width*scale,ph=portrait.height*scale;x.fillStyle='#dce8f2';x.fillRect(100,190,700,680);x.drawImage(portrait,450-pw/2,530-ph/2,pw,ph);targetTexture.needsUpdate=true};portrait.onerror=()=>{};portrait.src='assets/id-portrait.webp';
    x.fillStyle='rgba(116,223,245,.12)';x.fillRect(66,164,768,735);
    x.fillStyle='#f2f8ff';x.font='700 52px Arial';x.fillText('HUỲNH NHẬT HIẾU',66,990);
    x.fillStyle='#8ddff2';x.font='bold 30px Arial';x.fillText('KHOA HỌC MÁY TÍNH',66,1050);
@@ -57,7 +57,7 @@ import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.160.1/build/three.m
    x.fillText('– ĐHQG TP.HCM (HCMUS)',66,1150);
    x.fillStyle='#74dff5';x.fillRect(66,1200,768,7);
   }
-  texture=new THREE.CanvasTexture(c);texture.colorSpace=THREE.SRGBColorSpace;
+  texture=new THREE.CanvasTexture(c);texture.colorSpace=THREE.SRGBColorSpace;targetTexture=texture;
   return texture;
  }
  const front=new THREE.Mesh(new THREE.PlaneGeometry(w-.13,h-.13),new THREE.MeshStandardMaterial({map:artwork(false),roughness:.62,metalness:.05}));
