@@ -29,29 +29,36 @@ import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.160.1/build/three.m
  const geo=new THREE.ExtrudeGeometry(shape,{depth,bevelEnabled:true,bevelSegments:3,steps:1,bevelSize:.025,bevelThickness:.025,curveSegments:12});geo.computeVertexNormals();
  const badge=new THREE.Group();root.add(badge);
  const body=new THREE.Mesh(geo,cardMat);body.position.z=-depth/2;badge.add(body);
- function artwork(back=false){
-  const c=document.createElement('canvas');c.width=800;c.height=1180;const x=c.getContext('2d');
-  x.fillStyle=back?'#071321':'#0b1d34';x.fillRect(0,0,800,1180);
-  x.strokeStyle='#56def5';x.lineWidth=5;x.strokeRect(25,25,750,1130);
-  x.fillStyle='#56def5';x.font='bold 29px monospace';x.fillText(back?'HC / CONNECT':'HC / IDENTITY',55,90);
-  x.fillStyle='#b49aff';x.fillRect(55,125,690,7);
+ let texture;\n function artwork(back=false){
+  const c=document.createElement('canvas');c.width=900;c.height=1320;const x=c.getContext('2d');
+  const g=x.createLinearGradient(0,0,900,1320);g.addColorStop(0,back?'#071321':'#0b1b30');g.addColorStop(.55,back?'#10243b':'#123653');g.addColorStop(1,'#07111f');x.fillStyle=g;x.fillRect(0,0,900,1320);
+  x.strokeStyle='rgba(119,213,244,.82)';x.lineWidth=5;x.strokeRect(28,28,844,1264);
+  x.fillStyle='#74dff5';x.font='600 30px monospace';x.fillText(back?'HIEU COMMITS / PROFILE':'HCMUS  /  STUDENT IDENTITY',66,92);
+  x.fillStyle='rgba(180,154,255,.9)';x.fillRect(66,126,768,5);
   if(back){
-   x.fillStyle='#e9f6ff';x.font='bold 54px Arial';x.fillText('BUILD WITH',58,270);x.fillText('INTENTION.',58,335);
-   x.fillStyle='#8ba9c8';x.font='26px monospace';x.fillText('SOFTWARE  /  SYSTEMS',58,420);x.fillText('SECURITY  /  NETWORKS',58,465);
-   x.fillStyle='#56def5';x.font='bold 30px monospace';x.fillText('GITHUB',58,850);
-   x.fillStyle='#d9e9fa';x.font='24px monospace';x.fillText('github.com/hieu-commits',58,900);
-   x.fillStyle='#b49aff';x.fillRect(55,1000,690,5);
-   x.fillStyle='#91a9c8';x.font='23px monospace';x.fillText('LEARN  ·  BUILD  ·  VERIFY',58,1080);
+   x.fillStyle='#f0f7ff';x.font='700 62px Arial';x.fillText('HUỲNH NHẬT',66,270);x.fillText('HIẾU',66,345);
+   x.fillStyle='#a8bfd8';x.font='30px monospace';x.fillText('COMPUTER SCIENCE',66,465);
+   x.fillText('UNIVERSITY OF SCIENCE',66,545);
+   x.fillText('VIETNAM NATIONAL UNIVERSITY',66,595);
+   x.fillText('HO CHI MINH CITY',66,645);
+   x.fillStyle='#74dff5';x.fillRect(66,730,768,5);
+   x.fillStyle='#e7f2ff';x.font='700 38px Arial';x.fillText('HIEU COMMITS',66,835);
+   x.fillStyle='#9bb4d0';x.font='25px monospace';x.fillText('SOFTWARE  /  NETWORKS',66,905);x.fillText('CYBER SECURITY  /  CLOUD',66,950);
+   x.fillStyle='#b49aff';x.fillRect(66,1050,768,5);
+   x.fillStyle='#9bb4d0';x.font='25px monospace';x.fillText('LEARN  ·  BUILD  ·  VERIFY',66,1130);
   }else{
-   x.fillStyle='#102e4c';x.fillRect(55,155,690,650);
-   x.strokeStyle='#3e85ad';x.lineWidth=3;x.strokeRect(55,155,690,650);
-   x.fillStyle='#56def5';x.beginPath();x.arc(400,425,145,0,Math.PI*2);x.fill();
-   x.fillStyle='#0b1d34';x.font='bold 142px Arial';x.textAlign='center';x.fillText('HC',400,475);x.textAlign='left';
-   x.fillStyle='#f2f8ff';x.font='bold 48px Arial';x.fillText('HUỲNH NHẬT HIẾU',55,900);
-   x.fillStyle='#9cb9d7';x.font='25px monospace';x.fillText('SOFTWARE ENGINEERING',55,955);x.fillText('SYSTEMS  ·  SECURITY  ·  AI',55,1000);
-   x.fillStyle='#56def5';x.fillRect(55,1050,690,8);
+   x.fillStyle='#102c46';x.fillRect(66,164,768,735);
+   x.strokeStyle='rgba(116,223,245,.5)';x.lineWidth=3;x.strokeRect(66,164,768,735);
+   const portrait=new Image();portrait.onload=()=>{const scale=Math.min(700/portrait.width,680/portrait.height);const pw=portrait.width*scale,ph=portrait.height*scale;x.fillStyle='#dce8f2';x.fillRect(100,190,700,680);x.drawImage(portrait,450-pw/2,530-ph/2,pw,ph);texture.needsUpdate=true};portrait.onerror=()=>{};portrait.src='assets/id-portrait.webp';
+   x.fillStyle='rgba(116,223,245,.12)';x.fillRect(66,164,768,735);
+   x.fillStyle='#f2f8ff';x.font='700 52px Arial';x.fillText('HUỲNH NHẬT HIẾU',66,990);
+   x.fillStyle='#8ddff2';x.font='bold 30px Arial';x.fillText('KHOA HỌC MÁY TÍNH',66,1050);
+   x.fillStyle='#b7cce0';x.font='25px Arial';x.fillText('Trường Đại học Khoa học Tự nhiên',66,1110);
+   x.fillText('– ĐHQG TP.HCM (HCMUS)',66,1150);
+   x.fillStyle='#74dff5';x.fillRect(66,1200,768,7);
   }
-  return new THREE.CanvasTexture(c);
+  texture=new THREE.CanvasTexture(c);texture.colorSpace=THREE.SRGBColorSpace;
+  return texture;
  }
  const front=new THREE.Mesh(new THREE.PlaneGeometry(w-.13,h-.13),new THREE.MeshStandardMaterial({map:artwork(false),roughness:.62,metalness:.05}));
  front.position.z=depth/2+.008;badge.add(front);
