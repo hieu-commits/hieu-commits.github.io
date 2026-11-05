@@ -47,7 +47,7 @@ import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.160.1/build/three.m
    x.fillStyle='#b49aff';x.fillRect(66,1050,768,5);
    x.fillStyle='#9bb4d0';x.font='25px monospace';x.fillText('LEARN  ·  BUILD  ·  VERIFY',66,1130);
   }else{
-   x.fillStyle='#102c46';x.fillRect(66,164,768,735);
+   x.fillStyle='#102c46';x.fillRect(66,164,768,735);x.fillStyle='#74dff5';x.font='700 150px Arial';x.textAlign='center';x.fillText('HC',450,590);x.textAlign='left';
    x.strokeStyle='rgba(116,223,245,.5)';x.lineWidth=3;x.strokeRect(66,164,768,735);
    const portrait=new Image();portrait.onload=()=>{const scale=Math.min(700/portrait.width,680/portrait.height);const pw=portrait.width*scale,ph=portrait.height*scale;x.fillStyle='#dce8f2';x.fillRect(100,190,700,680);x.drawImage(portrait,450-pw/2,530-ph/2,pw,ph);targetTexture.needsUpdate=true};portrait.onerror=()=>{};portrait.src='assets/id-portrait.webp';
    x.fillStyle='rgba(116,223,245,.12)';x.fillRect(66,164,768,735);
